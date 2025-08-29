@@ -1,0 +1,492 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dr. Massimo Faggioli — Jubilee of Hope (25 Slides)</title>
+  <meta name="description" content="Educational university-style slideshow based on Dr. Massimo Faggioli's insights on the Catholic Jubilee of Hope. Pure HTML/CSS/JS, offline-ready." />
+  <style>
+    :root{
+      --bg:#0f0a1a; --bg-2:#17112a; --ink:#f7f6fb; --muted:#cfc7f2; --accent:#b88aff; --accent-2:#ffd76a; --accent-3:#7dd3fc; --ok:#22c55e; --bad:#ef4444;
+    }
+    html,body{height:100%}
+    body{margin:0; background: radial-gradient(1200px 800px at 20% 0%, #1b1433, var(--bg)); color:var(--ink); font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial; overflow:hidden}
+    .deck{position:relative; height:100dvh; width:100%}
+    .slide{position:absolute; inset:0; display:none; padding:6vh 8vw}
+    .slide.active{display:block}
+    .slide-inner{max-width:1200px; margin:0 auto; background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); border:1px solid rgba(255,255,255,0.06); box-shadow:0 10px 40px rgba(0,0,0,.45); border-radius:24px; padding:4.5vh 5vw}
+    h1,h2,h3{margin:0 0 .4em; line-height:1.1}
+    h1{font-size:clamp(28px,5.6vw,58px); letter-spacing:.3px}
+    h2{font-size:clamp(22px,3.6vw,36px); color:var(--muted)}
+    p,li{font-size:clamp(16px,1.5vw,22px)}
+    .muted{color:var(--muted)}
+    .titlebar{display:flex; align-items:center; gap:12px; color:#d9d4ff; font-weight:600; margin-bottom:1.25rem}
+    .pill{display:inline-flex; align-items:center; gap:.5rem; background:linear-gradient(90deg, rgba(184,138,255,.2), rgba(255,215,106,.18)); border:1px solid rgba(255,215,106,.25); color:#ffe9a6; padding:.35rem .75rem; border-radius:999px; font-size:.9rem}
+    figure.placeholder{margin:1.25rem 0; padding:0}
+    .ph{border:1.5px dashed rgba(255,255,255,0.25); background: linear-gradient(135deg, rgba(184,138,255,.15), rgba(255,215,106,.10)); color:#ffe9a6; border-radius:18px; padding:1.2rem; display:flex; align-items:center; justify-content:center; min-height:22vh; text-align:center; font-size:clamp(14px,1.2vw,18px); font-weight:600}
+    .cols{display:grid; grid-template-columns: 1.1fr 1fr; gap:2rem; align-items:start}
+    .cols.reverse{grid-template-columns:1fr 1.1fr}
+    .klist{display:grid; gap:.65rem; margin:.75rem 0}
+    .kitem{display:grid; grid-template-columns:auto 1fr; gap:.75rem; align-items:start}
+    .ico{width:28px; height:28px; display:grid; place-items:center; border-radius:10px; background:rgba(184,138,255,.15); border:1px solid rgba(184,138,255,.35)}
+    .kitem strong{color:var(--accent-2)}
+    .notes{display:none; margin-top:1.2rem; padding:1rem 1.25rem; border-radius:14px; background:rgba(0,0,0,.35); border:1px solid rgba(255,255,255,.08)}
+    .slide.show-notes .notes{display:block}
+    .hud{position:absolute; bottom:14px; left:0; right:0; display:flex; align-items:center; justify-content:space-between; gap:10px; padding:0 18px}
+    .progress{flex:1; height:6px; background:rgba(255,255,255,.12); border-radius:999px; overflow:hidden}
+    .progress>span{display:block; height:100%; width:0%; background:linear-gradient(90deg, var(--accent-2), var(--accent))}
+    .controls{display:flex; gap:8px}
+    .btn{appearance:none; border:none; cursor:pointer; background:rgba(255,255,255,.08); color:var(--ink); border:1px solid rgba(255,255,255,.18); padding:.5rem .7rem; border-radius:12px; font-weight:600}
+    .btn:hover{background:rgba(255,255,255,.14)}
+    @media (prefers-reduced-motion:no-preference){.slide-inner{transition:transform .35s ease, opacity .35s ease}.slide.active .slide-inner{transform:translateY(0); opacity:1}.slide:not(.active) .slide-inner{transform:translateY(6px); opacity:.6}}
+    @media print{body{overflow:visible; background:#fff; color:#111} .slide{position:static; display:block; page-break-after:always} .slide-inner{box-shadow:none; border:1px solid #ddd} .hud{display:none}}
+  </style>
+</head>
+<body>
+  <div class="deck" id="deck" tabindex="0" aria-live="polite"><!-- Slide 1 -->
+<section class="slide active" data-index="1">
+  <div class="slide-inner">
+    <div class="titlebar"><span class="pill">Jubilee of Hope — 2025</span></div>
+    <h1>The Catholic Jubilee: A Journey into History, Theology, and Hope</h1>
+    <h2 class="muted">Based on a lecture by Dr. Massimo Faggioli (Villanova University)</h2>
+    <figure class="placeholder"><div class="ph">Visual: Blend of historical & modern Rome (Colosseum × St. Peter's)</div></figure>
+    <div class="notes"><p>Introduction to the presentation... focusing on the 2025 Jubilee of Hope.</p></div>
+  </div>
+</section>
+
+<!-- Slide 2 -->
+<section class="slide" data-index="2">
+  <div class="slide-inner cols">
+    <div>
+      <div class="titlebar"><span class="pill">Context</span></div>
+      <h1>Meet the Speaker: Dr. Massimo Faggioli</h1>
+      <div class="klist">
+        <div class="kitem"><span class="ico">🎓</span><div><strong>Professor of Historical Theology</strong> at Villanova University.</div></div>
+        <div class="kitem"><span class="ico">📖</span><div><strong>Author</strong> on papacy, Vatican II, global Church.</div></div>
+        <div class="kitem"><span class="ico">📰</span><div><strong>Columnist</strong> (La Croix Int’l, Commonweal).</div></div>
+      </div>
+    </div>
+    <figure class="placeholder"><div class="ph">Headshot of Dr. Faggioli + logos (Villanova, La Croix, Commonweal)</div></figure>
+    <div class="notes">Introducing the expert whose insights we are studying...</div>
+  </div>
+</section>
+
+<!-- Slide 3 -->
+<section class="slide" data-index="3">
+  <div class="slide-inner cols reverse">
+    <figure class="placeholder"><div class="ph">Icons for Grace • Conversion • Pilgrimage</div></figure>
+    <div>
+      <div class="titlebar"><span class="pill">Definitions</span></div>
+      <h1>What is a Catholic Jubilee?</h1>
+      <ul class="klist">
+        <li>A holy year of <strong>grace</strong>, <strong>conversion</strong>, prayer, and repentance.</li>
+        <li>Distinctly Catholic practice, traditionally a <strong>pilgrimage to Rome</strong>.</li>
+        <li>Each Jubilee centers on a specific <strong>spiritual theme</strong>.</li>
+      </ul>
+      <div class="notes">Defining the core concept...</div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 4 -->
+<section class="slide" data-index="4">
+  <div class="slide-inner">
+    <div class="titlebar"><span class="pill">Origins</span></div>
+    <h1>1300: The First Jubilee — Papacy at its Apex</h1>
+    <p class="muted">Instituted by <strong>Pope Boniface VIII</strong> during the era of Christendom.</p>
+    <figure class="placeholder"><div class="ph">Medieval image of Boniface VIII + timeline marker at 1300</div></figure>
+    <div class="notes">The Jubilee expressed papal power and a unified Latin Christendom.</div>
+  </div>
+</section>
+
+<!-- Slide 5 -->
+<section class="slide" data-index="5">
+  <div class="slide-inner">
+    <div class="titlebar"><span class="pill">Cadence</span></div>
+    <h1>How Often Are Jubilees Held?</h1>
+    <ul class="klist">
+      <li><strong>1300:</strong> 100-year interval</li>
+      <li><strong>Later:</strong> 50-year interval</li>
+      <li><strong>Since 1470:</strong> every 25 years (ordinary)</li>
+      <li><strong>Extraordinary Jubilees</strong> at papal discretion (e.g., 2015 Mercy)</li>
+    </ul>
+    <figure class="placeholder"><div class="ph">Timeline: 100 → 50 → 25 • Box: Extraordinary Jubilee example</div></figure>
+    <div class="notes">Explain ordinary vs extraordinary jubilees...</div>
+  </div>
+</section>
+
+<!-- Slide 6 -->
+<section class="slide" data-index="6">
+  <div class="slide-inner cols">
+    <div>
+      <div class="titlebar"><span class="pill">Historical Lens</span></div>
+      <h1>The Uncomfortable Origins: An “Unarmed Crusade”</h1>
+      <ul class="klist">
+        <li>Indulgences via travel to Rome were <strong>not biblical</strong> in origin.</li>
+        <li>Conceptually adapted from <strong>Crusade ideology</strong>.</li>
+        <li>Jubilee = <strong>spiritual crusade</strong> & risky pilgrimage.</li>
+      </ul>
+    </div>
+    <figure class="placeholder"><div class="ph">Split: Crusader knight ⇄ Medieval pilgrims • “Conceptual Link”</div></figure>
+    <div class="notes">Faggioli highlights this translation...</div>
+  </div>
+</section>
+
+<!-- Slide 7 -->
+<section class="slide" data-index="7">
+  <div class="slide-inner cols reverse">
+    <figure class="placeholder"><div class="ph">Contrast: medieval pilgrims vs. modern tourist selfie at St. Peter’s</div></figure>
+    <div>
+      <div class="titlebar"><span class="pill">Pilgrimage Today</span></div>
+      <h1>From Arduous Pilgrimage to Modern Tourism</h1>
+      <ul class="klist">
+        <li>Then: long, dangerous, deeply <strong>communal</strong> journeys.</li>
+        <li>Now: shorter, safer, often <strong>individualized</strong> & packaged.</li>
+        <li>Implication: changed <strong>spiritual dynamics</strong>.</li>
+      </ul>
+    </div>
+    <div class="notes">How convenience alters the meaning of pilgrimage.</div>
+  </div>
+</section>
+
+<!-- Slide 8 -->
+<section class="slide" data-index="8">
+  <div class="slide-inner">
+    <div class="titlebar"><span class="pill">Modern Era</span></div>
+    <h1>The 20th Century: Jubilees in a Changing World</h1>
+    <p>Jubilees began to mirror global events and technologies. Three snapshots:</p>
+    <ul class="klist">
+      <li><strong>1950:</strong> Post-war reconciliation & Cold War framing.</li>
+      <li><strong>1966:</strong> Decentralized celebration (post–Vatican II).</li>
+      <li><strong>1975:</strong> First globally televised Jubilee.</li>
+    </ul>
+    <figure class="placeholder"><div class="ph">Collage: post-WWII Europe • early TV • Cold War headline</div></figure>
+    <div class="notes">Set up next slides with each example.</div>
+  </div>
+</section>
+
+<!-- Slide 9 -->
+<section class="slide" data-index="9">
+  <div class="slide-inner">
+    <div class="titlebar"><span class="pill">1950</span></div>
+    <h1>A Jubilee of Reconciliation — and the Cold War</h1>
+    <ul class="klist">
+      <li>First Jubilee after WWII: gathering divided Europe in Rome.</li>
+      <li>Early Cold War context: Catholicism as moral force vs. Communism.</li>
+    </ul>
+    <figure class="placeholder"><div class="ph">B/W crowds at St. Peter’s • Labels: “Reconciliation”, “Cold War begins”</div></figure>
+    <div class="notes">Reconciliation and geopolitics shaping the message.</div>
+  </div>
+</section>
+
+<!-- Slide 10 -->
+<section class="slide" data-index="10">
+  <div class="slide-inner cols">
+    <div>
+      <div class="titlebar"><span class="pill">1966 & 1975</span></div>
+      <h1>Decentralization & Mass Media</h1>
+      <ul class="klist">
+        <li><strong>1966:</strong> Celebrating Vatican II locally — <em>decentralized</em>.</li>
+        <li><strong>1975:</strong> First globally <em>televised</em> Jubilee.</li>
+        <li>Adapting to new theology & technology.</li>
+      </ul>
+    </div>
+    <figure class="placeholder"><div class="ph">Local cathedral celebration • Family watching papal broadcast</div></figure>
+    <div class="notes">Subsidiarity & media.</div>
+  </div>
+</section>
+
+<!-- Slide 11 -->
+<section class="slide" data-index="11">
+  <div class="slide-inner">
+    <div class="titlebar"><span class="pill">2000</span></div>
+    <h1>The Great Jubilee: A Triumphant Church</h1>
+    <ul class="klist">
+      <li>Pope John Paul II, post–Communism optimism.</li>
+      <li>Pre-9/11 geopolitical shift; pre–abuse-crisis reckoning.</li>
+      <li>Confidence in a new millennium.</li>
+    </ul>
+    <figure class="placeholder"><div class="ph">JPII image • Crowd • “Optimism for a New Millennium”</div></figure>
+    <div class="notes">Tone of triumph before subsequent crises.</div>
+  </div>
+</section>
+
+<!-- Slide 12 -->
+<section class="slide" data-index="12">
+  <div class="slide-inner cols reverse">
+    <figure class="placeholder"><div class="ph">JPII at Western Wall • “Purification of Memory”</div></figure>
+    <div>
+      <div class="titlebar"><span class="pill">Reckoning</span></div>
+      <h1>Jubilee 2000: The “Purification of Memory”</h1>
+      <ul class="klist">
+        <li>Confession of historical failings (e.g., Crusades, anti-Semitism).</li>
+        <li>Major step for <strong>interfaith relations</strong>, especially Judaism.</li>
+      </ul>
+      <div class="notes">A landmark ecclesial penitence.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 13 -->
+<section class="slide" data-index="13">
+  <div class="slide-inner">
+    <div class="titlebar"><span class="pill">Now</span></div>
+    <h1>A New Reality: The World in 2025</h1>
+    <ul class="klist">
+      <li>“Age of sadness”: environmental anxiety, wars, social division.</li>
+      <li>Widespread <strong>hopelessness</strong> & fatigue.</li>
+    </ul>
+    <figure class="placeholder"><div class="ph">Montage: climate, protests, conflict headlines</div></figure>
+    <div class="notes">Contrast with 2000’s optimism.</div>
+  </div>
+</section>
+
+<!-- Slide 14 -->
+<section class="slide" data-index="14">
+  <div class="slide-inner">
+    <div class="titlebar"><span class="pill">Theme</span></div>
+    <h1>The Jubilee of 2025: A Call for Hope</h1>
+    <p>Pope Francis designates a <strong>Jubilee of Hope</strong>, following the <em>2015 Jubilee of Mercy</em>: from healing to hoping.</p>
+    <figure class="placeholder"><div class="ph">Official 2025 “Pilgrims of Hope” logo (placeholder)</div></figure>
+    <div class="notes">From lack of mercy → lack of hope.</div>
+  </div>
+</section>
+
+<!-- Slide 15 -->
+<section class="slide" data-index="15">
+  <div class="slide-inner cols">
+    <div>
+      <div class="titlebar"><span class="pill">Scripture</span></div>
+      <h1>“Spes non confundit” — Hope Will Not Shame</h1>
+      <ul class="klist">
+        <li>Romans 5:5 — “Hope does not disappoint.”</li>
+        <li>Deeper sense: a hope you’ll <strong>never be ashamed</strong> to have.</li>
+      </ul>
+    </div>
+    <figure class="placeholder"><div class="ph">Typography: “SPES NON CONFUNDIT” • Subtitle: Hope does not disappoint</div></figure>
+    <div class="notes">Greek nuance suggests resilience of hope.</div>
+  </div>
+</section>
+
+<!-- Slide 16 -->
+<section class="slide" data-index="16">
+  <div class="slide-inner cols reverse">
+    <figure class="placeholder"><div class="ph">Diagram: Optimism (🙂 feeling) vs Hope (⚓ virtue)</div></figure>
+    <div>
+      <div class="titlebar"><span class="pill">Clarification</span></div>
+      <h1>Theological Hope ≠ Optimism</h1>
+      <ul class="klist">
+        <li>Optimism: a <em>feeling</em> things will go well.</li>
+        <li>Hope: a <strong>virtue</strong> — trust in God’s promise, despite odds.</li>
+        <li>Faggioli: hope is the <em>opposite</em> of mere optimism.</li>
+      </ul>
+      <div class="notes">Anchor the distinction.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 17 -->
+<section class="slide" data-index="17">
+  <div class="slide-inner">
+    <div class="titlebar"><span class="pill">Christology</span></div>
+    <h1>Hope is Personified in Jesus Christ</h1>
+    <p>Grounded in the life, death, and resurrection of Jesus — defeat and death are not final.</p>
+    <figure class="placeholder"><div class="ph">Resurrection motif • “Hope is not a what, but a Who.”</div></figure>
+    <div class="notes">Christocentric foundation of hope.</div>
+  </div>
+</section>
+
+<!-- Slide 18 -->
+<section class="slide" data-index="18">
+  <div class="slide-inner cols">
+    <div>
+      <div class="titlebar"><span class="pill">Orientation</span></div>
+      <h1>Hope is Not Nostalgia</h1>
+      <ul class="klist">
+        <li>Not a return to a mythic “golden age.”</li>
+        <li>Looks forward to a different, better future — not in our control.</li>
+        <li>Requires <strong>letting go</strong> of the past.</li>
+      </ul>
+    </div>
+    <figure class="placeholder"><div class="ph">Person facing sunrise • Back to sepia past • “No U-Turn”</div></figure>
+    <div class="notes">Avoid romanticizing the past.</div>
+  </div>
+</section>
+
+<!-- Slide 19 -->
+<section class="slide" data-index="19">
+  <div class="slide-inner">
+    <div class="titlebar"><span class="pill">Practice</span></div>
+    <h1>Hope as an Active Commitment</h1>
+    <ul class="klist">
+      <li>Not passive; a <strong>discipline</strong> to exercise.</li>
+      <li>An <strong>artisan craft</strong>: patiently rebuild, reconcile, repair.</li>
+      <li>Work even when results aren’t immediate.</li>
+    </ul>
+    <figure class="placeholder"><div class="ph">Hands crafting (potter/weaver)</div></figure>
+    <div class="notes">Processes over events.</div>
+  </div>
+</section>
+
+<!-- Slide 20 -->
+<section class="slide" data-index="20">
+  <div class="slide-inner cols reverse">
+    <figure class="placeholder"><div class="ph">Crisis → Hope (War→Peace, Despair→Life, Exclusion→Inclusion)</div></figure>
+    <div>
+      <div class="titlebar"><span class="pill">Conversion</span></div>
+      <h1>Signs of Crisis → Signals of Hope</h1>
+      <ul class="klist">
+        <li>Work for <strong>peace</strong>; refuse nihilism with <strong>life</strong>.</li>
+        <li>Care for the <strong>discarded</strong>: poor, elderly, young.</li>
+        <li>Seek <strong>redemption</strong> for the fallen.</li>
+      </ul>
+      <div class="notes">Make the mandate concrete.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 21 -->
+<section class="slide" data-index="21">
+  <div class="slide-inner">
+    <div class="titlebar"><span class="pill">Synodality</span></div>
+    <h1>A Synodal Conversion: Hope is Communal</h1>
+    <ul class="klist">
+      <li>Pushes back against individualistic “Jesus and me.”</li>
+      <li>Journeying <strong>together</strong>: people gather in Rome.</li>
+      <li>Faith is embodied, shared, dialogical.</li>
+    </ul>
+    <figure class="placeholder"><div class="ph">Diverse pilgrims walking a path • “Synodality”</div></figure>
+    <div class="notes">Link pilgrimage with synodal ecclesiology.</div>
+  </div>
+</section>
+
+<!-- Slide 22 -->
+<section class="slide" data-index="22">
+  <div class="slide-inner cols">
+    <div>
+      <div class="titlebar"><span class="pill">For Others</span></div>
+      <h1>Hope Is for Others</h1>
+      <p>Walter Benjamin: “Those for whom we are given hope are those <em>without</em> hope.”</p>
+      <ul class="klist">
+        <li>We bear hope <strong>on behalf of</strong> others.</li>
+        <li>Priority for those who have lost it.</li>
+      </ul>
+    </div>
+    <figure class="placeholder"><div class="ph">One hand pulling another up • Quote displayed</div></figure>
+    <div class="notes">Expand the moral responsibility of hope.</div>
+  </div>
+</section>
+
+<!-- Slide 23 -->
+<section class="slide" data-index="23">
+  <div class="slide-inner">
+    <div class="titlebar"><span class="pill">Traditio</span></div>
+    <h1>We Hope Because Others Hoped for Us</h1>
+    <ul class="klist">
+      <li>Hope is <strong>received</strong> — a gift passed through generations.</li>
+      <li>Ancestors, saints, communities: a <strong>chain of hope</strong>.</li>
+      <li>Our task: continue and hand it on.</li>
+    </ul>
+    <figure class="placeholder"><div class="ph">Relay/chain motif • Torch of hope across generations</div></figure>
+    <div class="notes">Locate ourselves within this tradition.</div>
+  </div>
+</section>
+
+<!-- Slide 24 -->
+<section class="slide" data-index="24">
+  <div class="slide-inner cols reverse">
+    <figure class="placeholder"><div class="ph">Diverse people looking to bright horizon • 2025 logo (placeholder)</div></figure>
+    <div>
+      <div class="titlebar"><span class="pill">Takeaway</span></div>
+      <h1>Conclusion: The Legacy of the Jubilee of Hope</h1>
+    <ul class="klist">
+        <li>Reject despair; embrace demanding, <strong>active</strong> hope.</li>
+        <li>Work together for a future we trust but do not control.</li>
+        <li>Faith in action for our time.</li>
+      </ul>
+      <div class="notes">Synthesize history, theology, and practice.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 25 -->
+<section class="slide" data-index="25">
+  <div class="slide-inner">
+    <div class="titlebar"><span class="pill">Thanks</span></div>
+    <h1>Q&amp;A / Thank You</h1>
+    <p class="muted">Questions? Discussion? Contact: <em>add your email / link</em></p>
+    <figure class="placeholder"><div class="ph">Clean end slide • “Thank You” • optional contact QR</div></figure>
+    <div class="notes">Final slide for questions and thanks.</div>
+  </div>
+</section>
+
+<!-- HUD / Controls -->
+<div class="hud">
+  <div class="progress" aria-label="Progress"><span id="progress"></span></div>
+  <div class="controls">
+    <button class="btn" id="prev" title="Previous (← / PageUp)" aria-keyshortcuts="ArrowLeft PageUp">◀ Prev</button>
+    <button class="btn" id="next" title="Next (→ / Space / PageDown)" aria-keyshortcuts="ArrowRight PageDown Space">Next ▶</button>
+    <button class="btn" id="notes" title="Toggle speaker notes (N)" aria-keyshortcuts="N">Notes ⓘ</button>
+    <button class="btn" id="fs" title="Fullscreen (F)" aria-keyshortcuts="F">Fullscreen ⛶</button>
+    <button class="btn" id="print" title="Print / Export to PDF (Ctrl/Cmd+P)">Print/PDF</button>
+  </div>
+</div>
+
+  </div>  <script>
+    (function(){
+      const deck = document.getElementById('deck');
+      const slides = Array.from(deck.querySelectorAll('.slide'));
+      const progress = document.getElementById('progress');
+      const prevBtn = document.getElementById('prev');
+      const nextBtn = document.getElementById('next');
+      const notesBtn = document.getElementById('notes');
+      const fsBtn = document.getElementById('fs');
+      const printBtn = document.getElementById('print');
+      let idx = 0;
+
+      function clamp(n,min,max){ return Math.max(min, Math.min(n,max)); }
+      function show(i){
+        idx = clamp(i, 0, slides.length-1);
+        for(let j=0;j<slides.length;j++){ slides[j].classList.toggle('active', j===idx); }
+        progress.style.width = ((idx+1)/slides.length*100).toFixed(2)+'%';
+        try{ location.hash = '#'+(idx+1); }catch(e){}
+      }
+      function next(){ show(idx+1); }
+      function prev(){ show(idx-1); }
+      function toggleNotes(){ slides[idx].classList.toggle('show-notes'); }
+
+      // Button controls
+      prevBtn.addEventListener('click', prev);
+      nextBtn.addEventListener('click', next);
+      notesBtn.addEventListener('click', toggleNotes);
+      fsBtn.addEventListener('click', ()=>{
+        const el = document.documentElement;
+        if (!document.fullscreenElement && el.requestFullscreen) el.requestFullscreen();
+        else if (document.exitFullscreen) document.exitFullscreen();
+      });
+      printBtn.addEventListener('click', ()=>window.print());
+
+      // Keyboard controls
+      window.addEventListener('keydown', (e)=>{
+        const k = e.key;
+        if(['ArrowRight','PageDown',' '].includes(k)){ e.preventDefault(); next(); }
+        if(['ArrowLeft','PageUp','Backspace'].includes(k)){ e.preventDefault(); prev(); }
+        if(k==='n' || k==='N'){ e.preventDefault(); toggleNotes(); }
+        if(k==='f' || k==='F'){ e.preventDefault(); fsBtn.click(); }
+      });
+
+      // Hash navigation (#1..#25)
+      window.addEventListener('hashchange', ()=>{
+        const n = parseInt(location.hash.replace('#',''),10);
+        if(!Number.isNaN(n)) show(n-1);
+      });
+
+      // Initialize from hash
+      const start = parseInt(location.hash.replace('#',''),10);
+      if(!Number.isNaN(start)) idx = clamp(start-1,0,slides.length-1);
+      show(idx);
+
+      // Accessibility: focus deck to ensure arrow keys work in some embedders
+      deck.focus();
+    })();
+  </script></body>
+</html>
