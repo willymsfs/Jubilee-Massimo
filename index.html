@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Simple Slide Test</title>
+  <style>
+    .slide { display: none; }
+    .slide.active { display: block; }
+  </style>
+</head>
+<body>
+  <div class="slide active">Slide 1: Welcome!</div>
+  <div class="slide">Slide 2: Next slide.</div>
+  <button onclick="showSlide(0)">1</button>
+  <button onclick="showSlide(1)">2</button>
+  <script>
+    function showSlide(n) {
+      document.querySelectorAll('.slide').forEach((el, i) => {
+        el.classList.toggle('active', i === n);
+      });
+    }
+  </script>
+</body>
+</html>
