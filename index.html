@@ -1,492 +1,459 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dr. Massimo Faggioli — Jubilee of Hope (25 Slides)</title>
-  <meta name="description" content="Educational university-style slideshow based on Dr. Massimo Faggioli's insights on the Catholic Jubilee of Hope. Pure HTML/CSS/JS, offline-ready." />
-  <style>
-    :root{
-      --bg:#0f0a1a; --bg-2:#17112a; --ink:#f7f6fb; --muted:#cfc7f2; --accent:#b88aff; --accent-2:#ffd76a; --accent-3:#7dd3fc; --ok:#22c55e; --bad:#ef4444;
-    }
-    html,body{height:100%}
-    body{margin:0; background: radial-gradient(1200px 800px at 20% 0%, #1b1433, var(--bg)); color:var(--ink); font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial; overflow:hidden}
-    .deck{position:relative; height:100dvh; width:100%}
-    .slide{position:absolute; inset:0; display:none; padding:6vh 8vw}
-    .slide.active{display:block}
-    .slide-inner{max-width:1200px; margin:0 auto; background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); border:1px solid rgba(255,255,255,0.06); box-shadow:0 10px 40px rgba(0,0,0,.45); border-radius:24px; padding:4.5vh 5vw}
-    h1,h2,h3{margin:0 0 .4em; line-height:1.1}
-    h1{font-size:clamp(28px,5.6vw,58px); letter-spacing:.3px}
-    h2{font-size:clamp(22px,3.6vw,36px); color:var(--muted)}
-    p,li{font-size:clamp(16px,1.5vw,22px)}
-    .muted{color:var(--muted)}
-    .titlebar{display:flex; align-items:center; gap:12px; color:#d9d4ff; font-weight:600; margin-bottom:1.25rem}
-    .pill{display:inline-flex; align-items:center; gap:.5rem; background:linear-gradient(90deg, rgba(184,138,255,.2), rgba(255,215,106,.18)); border:1px solid rgba(255,215,106,.25); color:#ffe9a6; padding:.35rem .75rem; border-radius:999px; font-size:.9rem}
-    figure.placeholder{margin:1.25rem 0; padding:0}
-    .ph{border:1.5px dashed rgba(255,255,255,0.25); background: linear-gradient(135deg, rgba(184,138,255,.15), rgba(255,215,106,.10)); color:#ffe9a6; border-radius:18px; padding:1.2rem; display:flex; align-items:center; justify-content:center; min-height:22vh; text-align:center; font-size:clamp(14px,1.2vw,18px); font-weight:600}
-    .cols{display:grid; grid-template-columns: 1.1fr 1fr; gap:2rem; align-items:start}
-    .cols.reverse{grid-template-columns:1fr 1.1fr}
-    .klist{display:grid; gap:.65rem; margin:.75rem 0}
-    .kitem{display:grid; grid-template-columns:auto 1fr; gap:.75rem; align-items:start}
-    .ico{width:28px; height:28px; display:grid; place-items:center; border-radius:10px; background:rgba(184,138,255,.15); border:1px solid rgba(184,138,255,.35)}
-    .kitem strong{color:var(--accent-2)}
-    .notes{display:none; margin-top:1.2rem; padding:1rem 1.25rem; border-radius:14px; background:rgba(0,0,0,.35); border:1px solid rgba(255,255,255,.08)}
-    .slide.show-notes .notes{display:block}
-    .hud{position:absolute; bottom:14px; left:0; right:0; display:flex; align-items:center; justify-content:space-between; gap:10px; padding:0 18px}
-    .progress{flex:1; height:6px; background:rgba(255,255,255,.12); border-radius:999px; overflow:hidden}
-    .progress>span{display:block; height:100%; width:0%; background:linear-gradient(90deg, var(--accent-2), var(--accent))}
-    .controls{display:flex; gap:8px}
-    .btn{appearance:none; border:none; cursor:pointer; background:rgba(255,255,255,.08); color:var(--ink); border:1px solid rgba(255,255,255,.18); padding:.5rem .7rem; border-radius:12px; font-weight:600}
-    .btn:hover{background:rgba(255,255,255,.14)}
-    @media (prefers-reduced-motion:no-preference){.slide-inner{transition:transform .35s ease, opacity .35s ease}.slide.active .slide-inner{transform:translateY(0); opacity:1}.slide:not(.active) .slide-inner{transform:translateY(6px); opacity:.6}}
-    @media print{body{overflow:visible; background:#fff; color:#111} .slide{position:static; display:block; page-break-after:always} .slide-inner{box-shadow:none; border:1px solid #ddd} .hud{display:none}}
-  </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Catholic Jubilee of Hope — Dr. Massimo Faggioli</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#faf7f1;--cream2:#f2ede1;--cream3:#e8e0cf;
+  --ink:#1c1610;--ink2:#3a2e1e;--ink3:#6b5a3e;
+  --gold:#c9a84c;--gold2:#e8c87a;--gold3:#f5e4b0;--goldp:#fdf8ec;
+  --red:#8b1a1a;--red2:#a83030;--redp:#fdf0f0;
+  --navy:#1a2744;--navy2:#2e4070;--navyp:#e8edf5;
+  --olive:#4a6741;--olivep:#eef4e8;
+  --slate:#4a5568;
+  --fh:'Playfair Display',Georgia,serif;
+  --fb:'Source Serif 4',Georgia,serif;
+  --fu:'Inter',sans-serif;
+  --fs:14pt;
+  --sh:0 4px 24px rgba(28,22,16,.12);
+  --sh2:0 8px 48px rgba(28,22,16,.2);
+  --r:14px;--tr:all .28s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);font-size:var(--fs);background:var(--cream);color:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased}
+.screen{display:none;animation:fadeUp .36s ease both}
+.screen.active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+/* NAV */
+#nav{position:sticky;top:0;z-index:200;background:rgba(26,22,16,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,168,76,.25);padding:.65rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+.brand{font-family:var(--fh);font-size:1rem;font-weight:700;color:var(--gold);cursor:pointer;letter-spacing:.03em;line-height:1.3}
+.brand small{display:block;font-size:.66rem;font-weight:400;color:rgba(201,168,76,.6);font-family:var(--fu);letter-spacing:.08em;text-transform:uppercase}
+.nav-btns{display:flex;gap:.4rem;flex-wrap:wrap}
+.btn{font-family:var(--fu);font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.35rem .85rem;border-radius:5px;cursor:pointer;transition:var(--tr);border:none;white-space:nowrap}
+.bo{background:transparent;border:1px solid rgba(201,168,76,.5);color:var(--gold2)}.bo:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.bs{background:var(--gold);color:var(--ink)}.bs:hover{background:var(--gold2)}
+.bact{background:var(--gold2)!important;color:var(--ink)!important}
+/* HERO */
+.hero{background:linear-gradient(160deg,#1a1208 0%,#2a1e0e 48%,#1c1a2c 100%);color:#fff;padding:5.5rem 4rem 4.5rem;min-height:90vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='1.5' fill='%23c9a84c' fill-opacity='0.07'/%3E%3C/svg%3E");pointer-events:none}
+.eyebrow{font-family:var(--fu);font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);border:1px solid rgba(201,168,76,.4);background:rgba(201,168,76,.1);display:inline-block;padding:.28rem 1rem;border-radius:3px;margin-bottom:2rem}
+.hero-t{font-family:var(--fh);font-size:clamp(2rem,5vw,4rem);font-weight:900;line-height:1.08;margin-bottom:.5rem}
+.hero-t em{font-style:italic;color:var(--gold2)}
+.hero-s{font-family:var(--fb);font-style:italic;font-size:1.2rem;color:rgba(255,255,255,.72);margin-bottom:.8rem}
+.hrule{width:60px;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold2));margin:1.4rem 0}
+.hero-meta{font-family:var(--fu);font-size:.8rem;color:rgba(255,255,255,.55);margin-bottom:2rem;line-height:2;display:flex;flex-wrap:wrap;gap:.3rem 2.5rem}
+.hero-meta strong{color:var(--gold2);font-weight:600}
+.hero-q{font-family:var(--fb);font-style:italic;font-size:1.08rem;color:rgba(255,255,255,.88);border-left:3px solid var(--gold);padding-left:1.2rem;max-width:750px;margin-bottom:3rem;line-height:1.8}
+.hero-q cite{display:block;font-size:.76rem;font-style:normal;color:var(--gold2);margin-top:.5rem;font-family:var(--fu)}
+.hcta{display:flex;gap:.8rem;flex-wrap:wrap}
+.cp{font-family:var(--fu);font-weight:700;font-size:.88rem;letter-spacing:.05em;text-transform:uppercase;padding:.75rem 2rem;border-radius:6px;background:var(--gold);color:var(--ink);border:none;cursor:pointer;transition:var(--tr);box-shadow:0 4px 16px rgba(201,168,76,.35)}
+.cp:hover{background:var(--gold2);transform:translateY(-2px)}
+.cs{font-family:var(--fu);font-weight:700;font-size:.85rem;letter-spacing:.05em;text-transform:uppercase;padding:.75rem 1.8rem;border-radius:6px;background:transparent;color:rgba(255,255,255,.82);border:1px solid rgba(255,255,255,.28);cursor:pointer;transition:var(--tr)}
+.cs:hover{border-color:var(--gold);color:var(--gold2)}
+.hscroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.4rem;color:rgba(255,255,255,.3);font-family:var(--fu);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:var(--tr)}
+.hscroll:hover{color:var(--gold)}
+.arr{width:16px;height:16px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);animation:ab 1.9s ease-in-out infinite}
+@keyframes ab{0%,100%{transform:rotate(45deg) translateY(0)}50%{transform:rotate(45deg) translateY(5px)}}
+/* OVERVIEW */
+#scr-ov{padding:3.5rem 2rem 5rem}
+.ovh{max-width:1150px;margin:0 auto 2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-bottom:1px solid var(--cream3);padding-bottom:1.2rem}
+.ovt{font-family:var(--fh);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:var(--ink)}
+.mgrid{max-width:1150px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.4rem}
+.mcard{background:#fff;border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);cursor:pointer;transition:var(--tr);border:1px solid var(--cream3)}
+.mcard:hover{transform:translateY(-4px);box-shadow:var(--sh2)}
+.mc-hd{padding:1.2rem 1.5rem 1rem;position:relative;overflow:hidden;color:#fff}
+.mc-hd::after{content:attr(data-n);position:absolute;right:-6px;top:-6px;font-family:var(--fh);font-size:5rem;font-weight:900;opacity:.1;line-height:1}
+.mc-tag{font-family:var(--fu);font-size:.6rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;background:rgba(255,255,255,.18);padding:.2rem .6rem;border-radius:3px;margin-bottom:.6rem;display:inline-block}
+.mc-icon{font-size:1.8rem;margin-bottom:.25rem}
+.mc-nm{font-family:var(--fh);font-size:1.2rem;font-weight:700;line-height:1.2}
+.mc-sb{font-style:italic;font-size:.86rem;opacity:.82;margin-top:.2rem}
+.mc-bd{padding:1.1rem 1.5rem 1.3rem}
+.mc-prev{font-size:.9rem;color:var(--ink3);line-height:1.62}
+.mc-ft{padding:.75rem 1.5rem;color:#fff;display:flex;align-items:center;justify-content:space-between;font-family:var(--fu);font-size:.7rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+/* DETAIL */
+#scr-det{padding:0}
+.dh{color:#fff;padding:3rem 3rem 2.5rem;position:relative;overflow:hidden}
+.dh::before{content:attr(data-n);position:absolute;right:-10px;bottom:-20px;font-family:var(--fh);font-size:13rem;font-weight:900;opacity:.07;line-height:1;pointer-events:none}
+.dht{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;max-width:1000px}
+.d-num{font-family:var(--fh);font-size:1.2rem;opacity:.7;font-weight:700}
+.d-icon{font-size:3.2rem}
+.d-nm{font-family:var(--fh);font-size:clamp(1.7rem,4vw,2.8rem);font-weight:900;line-height:1.1;margin:.3rem 0}
+.d-sb{font-family:var(--fb);font-style:italic;font-size:1.05rem;opacity:.85;margin-bottom:1.3rem}
+.dbadges{display:flex;flex-wrap:wrap;gap:.4rem}
+.badge{font-family:var(--fu);font-size:.7rem;font-weight:700;background:rgba(255,255,255,.18);padding:.25rem .75rem;border-radius:20px;backdrop-filter:blur(4px)}
+.db{max-width:1000px;margin:0 auto;padding:2.5rem 2rem 5rem}
+.dsec{margin-bottom:2.5rem}
+.dlbl{font-family:var(--fu);font-size:.67rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cc,var(--gold));margin-bottom:.9rem;padding-bottom:.45rem;border-bottom:2px solid var(--ccp,var(--goldp))}
+.prose{background:#fff;border-radius:var(--r);padding:1.8rem 2rem;box-shadow:var(--sh);border-left:5px solid var(--cc,var(--gold));font-size:1rem;color:var(--ink2);line-height:1.82}
+.prose p+p{margin-top:.9rem}
+.gq{font-family:var(--fb);font-style:italic;font-size:1.03rem;color:var(--ink2);background:var(--goldp);border-left:4px solid var(--gold);padding:1rem 1.5rem;border-radius:0 10px 10px 0;margin:1.3rem 0;line-height:1.75}
+.gq cite{display:block;font-size:.76rem;font-style:normal;color:var(--slate);margin-top:.5rem;font-family:var(--fu)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.1rem;margin-top:.5rem}
+.card{background:#fff;border-radius:10px;padding:1.2rem 1.4rem;box-shadow:var(--sh);border-top:3px solid var(--cc,var(--gold))}
+.card-icon{font-size:1.5rem;margin-bottom:.4rem}
+.card-title{font-family:var(--fh);font-size:1rem;font-weight:700;color:var(--cc,var(--ink));margin-bottom:.45rem;line-height:1.3}
+.card-body{font-size:.88rem;color:var(--ink2);line-height:1.65}
+.card-body strong{color:var(--ink);font-weight:600}
+.tl{position:relative;padding-left:2rem;margin-top:.5rem}
+.tl::before{content:'';position:absolute;left:.5rem;top:.5rem;bottom:.5rem;width:2px;background:linear-gradient(to bottom,var(--cc,var(--gold)),transparent)}
+.tl-item{position:relative;margin-bottom:1.5rem}
+.tl-dot{position:absolute;left:-2rem;top:.3rem;width:12px;height:12px;border-radius:50%;background:var(--cc,var(--gold));border:2px solid var(--cream);box-shadow:var(--sh)}
+.tl-date{font-family:var(--fu);font-size:.68rem;font-weight:700;letter-spacing:.08em;color:var(--cc,var(--gold));text-transform:uppercase;margin-bottom:.22rem}
+.tl-text{font-size:.9rem;color:var(--ink2);line-height:1.65;background:#fff;border-radius:8px;padding:.85rem 1rem;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.tl-text strong{color:var(--ink);font-weight:600}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:.5rem}
+.cbox{border-radius:10px;padding:1.2rem 1.4rem;box-shadow:var(--sh)}
+.clbl{font-family:var(--fu);font-size:.64rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.6rem}
+.clist{list-style:none}
+.clist li{font-size:.88rem;color:var(--ink2);padding-left:.9rem;position:relative;margin-bottom:.42rem;line-height:1.55}
+.clist li::before{content:'›';position:absolute;left:0;font-weight:700}
+.illus{background:linear-gradient(135deg,rgba(201,168,76,.08),rgba(201,168,76,.04));border:1.5px dashed rgba(201,168,76,.4);border-radius:12px;padding:1.4rem 1.7rem;margin:1.2rem 0;display:flex;align-items:flex-start;gap:1rem}
+.illus-icon{font-size:2.3rem;flex-shrink:0}
+.illus-label{font-family:var(--fu);font-size:.63rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem}
+.illus-text{font-size:.88rem;color:var(--ink2);line-height:1.65;font-style:italic}
+.sum-box{background:linear-gradient(135deg,var(--ink),var(--ink2));color:#fff;border-radius:var(--r);padding:1.8rem 2rem}
+.sum-box p{font-family:var(--fb);font-style:italic;font-size:1.03rem;line-height:1.78;color:rgba(255,255,255,.9)}
+.det-nav{margin-top:2.5rem;display:flex;gap:.7rem;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .45s ease,transform .45s ease}
+.reveal.vis{opacity:1;transform:none}
+@media(max-width:900px){.hero{padding:4rem 1.8rem 3.5rem;min-height:auto}.compare{grid-template-columns:1fr}.dh{padding:2rem 1.5rem}.db{padding:1.5rem 1rem 4rem}}
+@media(max-width:600px){#nav{padding:.55rem 1rem}#scr-ov{padding:2rem .9rem 4rem}.cards{grid-template-columns:1fr}.mgrid{grid-template-columns:1fr}.dht{flex-wrap:wrap}}
+</style>
 </head>
 <body>
-  <div class="deck" id="deck" tabindex="0" aria-live="polite"><!-- Slide 1 -->
-<section class="slide active" data-index="1">
-  <div class="slide-inner">
-    <div class="titlebar"><span class="pill">Jubilee of Hope — 2025</span></div>
-    <h1>The Catholic Jubilee: A Journey into History, Theology, and Hope</h1>
-    <h2 class="muted">Based on a lecture by Dr. Massimo Faggioli (Villanova University)</h2>
-    <figure class="placeholder"><div class="ph">Visual: Blend of historical & modern Rome (Colosseum × St. Peter's)</div></figure>
-    <div class="notes"><p>Introduction to the presentation... focusing on the 2025 Jubilee of Hope.</p></div>
+<nav id="nav">
+  <div class="brand" onclick="go('hero')">The Catholic Jubilee of Hope <small>Dr. Massimo Faggioli · Villanova University</small></div>
+  <div class="nav-btns" id="nbts">
+    <button class="btn bo" onclick="go('ov')">All Modules</button>
   </div>
-</section>
+</nav>
 
-<!-- Slide 2 -->
-<section class="slide" data-index="2">
-  <div class="slide-inner cols">
-    <div>
-      <div class="titlebar"><span class="pill">Context</span></div>
-      <h1>Meet the Speaker: Dr. Massimo Faggioli</h1>
-      <div class="klist">
-        <div class="kitem"><span class="ico">🎓</span><div><strong>Professor of Historical Theology</strong> at Villanova University.</div></div>
-        <div class="kitem"><span class="ico">📖</span><div><strong>Author</strong> on papacy, Vatican II, global Church.</div></div>
-        <div class="kitem"><span class="ico">📰</span><div><strong>Columnist</strong> (La Croix Int’l, Commonweal).</div></div>
-      </div>
+<div id="screen-hero" class="screen active">
+  <div class="hero">
+    <div class="eyebrow">Jubilee 2025 · Historical &amp; Theological Study</div>
+    <h1 class="hero-t"><em>Spes Non Confundit</em></h1>
+    <p class="hero-s">Hope Does Not Disappoint — The Catholic Jubilee of Hope 2025</p>
+    <div class="hrule"></div>
+    <div class="hero-meta">
+      <span><strong>Based on:</strong> Dr. Massimo Faggioli, Villanova University</span>
+      <span><strong>Sources:</strong> Franciscan Renewal Center Phoenix · Paluch Lecture 2024 (Mundelein) · UCD Dublin 2025</span>
     </div>
-    <figure class="placeholder"><div class="ph">Headshot of Dr. Faggioli + logos (Villanova, La Croix, Commonweal)</div></figure>
-    <div class="notes">Introducing the expert whose insights we are studying...</div>
-  </div>
-</section>
-
-<!-- Slide 3 -->
-<section class="slide" data-index="3">
-  <div class="slide-inner cols reverse">
-    <figure class="placeholder"><div class="ph">Icons for Grace • Conversion • Pilgrimage</div></figure>
-    <div>
-      <div class="titlebar"><span class="pill">Definitions</span></div>
-      <h1>What is a Catholic Jubilee?</h1>
-      <ul class="klist">
-        <li>A holy year of <strong>grace</strong>, <strong>conversion</strong>, prayer, and repentance.</li>
-        <li>Distinctly Catholic practice, traditionally a <strong>pilgrimage to Rome</strong>.</li>
-        <li>Each Jubilee centers on a specific <strong>spiritual theme</strong>.</li>
-      </ul>
-      <div class="notes">Defining the core concept...</div>
+    <blockquote class="hero-q">
+      "Hope does not disappoint." The Greek word <em>kataischuno</em> means something deeper: a hope that will never make you <em>ashamed</em> of being hopeful. For Paul, hope is not optimism. It is not a feeling. It is personified by Jesus Christ — and it is the complete opposite of optimism.
+      <cite>— Dr. Massimo Faggioli on Romans 5:5 and the Jubilee Bull <em>Spes Non Confundit</em> (May 2024)</cite>
+    </blockquote>
+    <div class="hcta">
+      <button class="cp" onclick="go('ov')">Explore All Eight Modules →</button>
+      <button class="cs" onclick="showDet('hist')">Begin: The Jubilee in History</button>
     </div>
-  </div>
-</section>
-
-<!-- Slide 4 -->
-<section class="slide" data-index="4">
-  <div class="slide-inner">
-    <div class="titlebar"><span class="pill">Origins</span></div>
-    <h1>1300: The First Jubilee — Papacy at its Apex</h1>
-    <p class="muted">Instituted by <strong>Pope Boniface VIII</strong> during the era of Christendom.</p>
-    <figure class="placeholder"><div class="ph">Medieval image of Boniface VIII + timeline marker at 1300</div></figure>
-    <div class="notes">The Jubilee expressed papal power and a unified Latin Christendom.</div>
-  </div>
-</section>
-
-<!-- Slide 5 -->
-<section class="slide" data-index="5">
-  <div class="slide-inner">
-    <div class="titlebar"><span class="pill">Cadence</span></div>
-    <h1>How Often Are Jubilees Held?</h1>
-    <ul class="klist">
-      <li><strong>1300:</strong> 100-year interval</li>
-      <li><strong>Later:</strong> 50-year interval</li>
-      <li><strong>Since 1470:</strong> every 25 years (ordinary)</li>
-      <li><strong>Extraordinary Jubilees</strong> at papal discretion (e.g., 2015 Mercy)</li>
-    </ul>
-    <figure class="placeholder"><div class="ph">Timeline: 100 → 50 → 25 • Box: Extraordinary Jubilee example</div></figure>
-    <div class="notes">Explain ordinary vs extraordinary jubilees...</div>
-  </div>
-</section>
-
-<!-- Slide 6 -->
-<section class="slide" data-index="6">
-  <div class="slide-inner cols">
-    <div>
-      <div class="titlebar"><span class="pill">Historical Lens</span></div>
-      <h1>The Uncomfortable Origins: An “Unarmed Crusade”</h1>
-      <ul class="klist">
-        <li>Indulgences via travel to Rome were <strong>not biblical</strong> in origin.</li>
-        <li>Conceptually adapted from <strong>Crusade ideology</strong>.</li>
-        <li>Jubilee = <strong>spiritual crusade</strong> & risky pilgrimage.</li>
-      </ul>
-    </div>
-    <figure class="placeholder"><div class="ph">Split: Crusader knight ⇄ Medieval pilgrims • “Conceptual Link”</div></figure>
-    <div class="notes">Faggioli highlights this translation...</div>
-  </div>
-</section>
-
-<!-- Slide 7 -->
-<section class="slide" data-index="7">
-  <div class="slide-inner cols reverse">
-    <figure class="placeholder"><div class="ph">Contrast: medieval pilgrims vs. modern tourist selfie at St. Peter’s</div></figure>
-    <div>
-      <div class="titlebar"><span class="pill">Pilgrimage Today</span></div>
-      <h1>From Arduous Pilgrimage to Modern Tourism</h1>
-      <ul class="klist">
-        <li>Then: long, dangerous, deeply <strong>communal</strong> journeys.</li>
-        <li>Now: shorter, safer, often <strong>individualized</strong> & packaged.</li>
-        <li>Implication: changed <strong>spiritual dynamics</strong>.</li>
-      </ul>
-    </div>
-    <div class="notes">How convenience alters the meaning of pilgrimage.</div>
-  </div>
-</section>
-
-<!-- Slide 8 -->
-<section class="slide" data-index="8">
-  <div class="slide-inner">
-    <div class="titlebar"><span class="pill">Modern Era</span></div>
-    <h1>The 20th Century: Jubilees in a Changing World</h1>
-    <p>Jubilees began to mirror global events and technologies. Three snapshots:</p>
-    <ul class="klist">
-      <li><strong>1950:</strong> Post-war reconciliation & Cold War framing.</li>
-      <li><strong>1966:</strong> Decentralized celebration (post–Vatican II).</li>
-      <li><strong>1975:</strong> First globally televised Jubilee.</li>
-    </ul>
-    <figure class="placeholder"><div class="ph">Collage: post-WWII Europe • early TV • Cold War headline</div></figure>
-    <div class="notes">Set up next slides with each example.</div>
-  </div>
-</section>
-
-<!-- Slide 9 -->
-<section class="slide" data-index="9">
-  <div class="slide-inner">
-    <div class="titlebar"><span class="pill">1950</span></div>
-    <h1>A Jubilee of Reconciliation — and the Cold War</h1>
-    <ul class="klist">
-      <li>First Jubilee after WWII: gathering divided Europe in Rome.</li>
-      <li>Early Cold War context: Catholicism as moral force vs. Communism.</li>
-    </ul>
-    <figure class="placeholder"><div class="ph">B/W crowds at St. Peter’s • Labels: “Reconciliation”, “Cold War begins”</div></figure>
-    <div class="notes">Reconciliation and geopolitics shaping the message.</div>
-  </div>
-</section>
-
-<!-- Slide 10 -->
-<section class="slide" data-index="10">
-  <div class="slide-inner cols">
-    <div>
-      <div class="titlebar"><span class="pill">1966 & 1975</span></div>
-      <h1>Decentralization & Mass Media</h1>
-      <ul class="klist">
-        <li><strong>1966:</strong> Celebrating Vatican II locally — <em>decentralized</em>.</li>
-        <li><strong>1975:</strong> First globally <em>televised</em> Jubilee.</li>
-        <li>Adapting to new theology & technology.</li>
-      </ul>
-    </div>
-    <figure class="placeholder"><div class="ph">Local cathedral celebration • Family watching papal broadcast</div></figure>
-    <div class="notes">Subsidiarity & media.</div>
-  </div>
-</section>
-
-<!-- Slide 11 -->
-<section class="slide" data-index="11">
-  <div class="slide-inner">
-    <div class="titlebar"><span class="pill">2000</span></div>
-    <h1>The Great Jubilee: A Triumphant Church</h1>
-    <ul class="klist">
-      <li>Pope John Paul II, post–Communism optimism.</li>
-      <li>Pre-9/11 geopolitical shift; pre–abuse-crisis reckoning.</li>
-      <li>Confidence in a new millennium.</li>
-    </ul>
-    <figure class="placeholder"><div class="ph">JPII image • Crowd • “Optimism for a New Millennium”</div></figure>
-    <div class="notes">Tone of triumph before subsequent crises.</div>
-  </div>
-</section>
-
-<!-- Slide 12 -->
-<section class="slide" data-index="12">
-  <div class="slide-inner cols reverse">
-    <figure class="placeholder"><div class="ph">JPII at Western Wall • “Purification of Memory”</div></figure>
-    <div>
-      <div class="titlebar"><span class="pill">Reckoning</span></div>
-      <h1>Jubilee 2000: The “Purification of Memory”</h1>
-      <ul class="klist">
-        <li>Confession of historical failings (e.g., Crusades, anti-Semitism).</li>
-        <li>Major step for <strong>interfaith relations</strong>, especially Judaism.</li>
-      </ul>
-      <div class="notes">A landmark ecclesial penitence.</div>
-    </div>
-  </div>
-</section>
-
-<!-- Slide 13 -->
-<section class="slide" data-index="13">
-  <div class="slide-inner">
-    <div class="titlebar"><span class="pill">Now</span></div>
-    <h1>A New Reality: The World in 2025</h1>
-    <ul class="klist">
-      <li>“Age of sadness”: environmental anxiety, wars, social division.</li>
-      <li>Widespread <strong>hopelessness</strong> & fatigue.</li>
-    </ul>
-    <figure class="placeholder"><div class="ph">Montage: climate, protests, conflict headlines</div></figure>
-    <div class="notes">Contrast with 2000’s optimism.</div>
-  </div>
-</section>
-
-<!-- Slide 14 -->
-<section class="slide" data-index="14">
-  <div class="slide-inner">
-    <div class="titlebar"><span class="pill">Theme</span></div>
-    <h1>The Jubilee of 2025: A Call for Hope</h1>
-    <p>Pope Francis designates a <strong>Jubilee of Hope</strong>, following the <em>2015 Jubilee of Mercy</em>: from healing to hoping.</p>
-    <figure class="placeholder"><div class="ph">Official 2025 “Pilgrims of Hope” logo (placeholder)</div></figure>
-    <div class="notes">From lack of mercy → lack of hope.</div>
-  </div>
-</section>
-
-<!-- Slide 15 -->
-<section class="slide" data-index="15">
-  <div class="slide-inner cols">
-    <div>
-      <div class="titlebar"><span class="pill">Scripture</span></div>
-      <h1>“Spes non confundit” — Hope Will Not Shame</h1>
-      <ul class="klist">
-        <li>Romans 5:5 — “Hope does not disappoint.”</li>
-        <li>Deeper sense: a hope you’ll <strong>never be ashamed</strong> to have.</li>
-      </ul>
-    </div>
-    <figure class="placeholder"><div class="ph">Typography: “SPES NON CONFUNDIT” • Subtitle: Hope does not disappoint</div></figure>
-    <div class="notes">Greek nuance suggests resilience of hope.</div>
-  </div>
-</section>
-
-<!-- Slide 16 -->
-<section class="slide" data-index="16">
-  <div class="slide-inner cols reverse">
-    <figure class="placeholder"><div class="ph">Diagram: Optimism (🙂 feeling) vs Hope (⚓ virtue)</div></figure>
-    <div>
-      <div class="titlebar"><span class="pill">Clarification</span></div>
-      <h1>Theological Hope ≠ Optimism</h1>
-      <ul class="klist">
-        <li>Optimism: a <em>feeling</em> things will go well.</li>
-        <li>Hope: a <strong>virtue</strong> — trust in God’s promise, despite odds.</li>
-        <li>Faggioli: hope is the <em>opposite</em> of mere optimism.</li>
-      </ul>
-      <div class="notes">Anchor the distinction.</div>
-    </div>
-  </div>
-</section>
-
-<!-- Slide 17 -->
-<section class="slide" data-index="17">
-  <div class="slide-inner">
-    <div class="titlebar"><span class="pill">Christology</span></div>
-    <h1>Hope is Personified in Jesus Christ</h1>
-    <p>Grounded in the life, death, and resurrection of Jesus — defeat and death are not final.</p>
-    <figure class="placeholder"><div class="ph">Resurrection motif • “Hope is not a what, but a Who.”</div></figure>
-    <div class="notes">Christocentric foundation of hope.</div>
-  </div>
-</section>
-
-<!-- Slide 18 -->
-<section class="slide" data-index="18">
-  <div class="slide-inner cols">
-    <div>
-      <div class="titlebar"><span class="pill">Orientation</span></div>
-      <h1>Hope is Not Nostalgia</h1>
-      <ul class="klist">
-        <li>Not a return to a mythic “golden age.”</li>
-        <li>Looks forward to a different, better future — not in our control.</li>
-        <li>Requires <strong>letting go</strong> of the past.</li>
-      </ul>
-    </div>
-    <figure class="placeholder"><div class="ph">Person facing sunrise • Back to sepia past • “No U-Turn”</div></figure>
-    <div class="notes">Avoid romanticizing the past.</div>
-  </div>
-</section>
-
-<!-- Slide 19 -->
-<section class="slide" data-index="19">
-  <div class="slide-inner">
-    <div class="titlebar"><span class="pill">Practice</span></div>
-    <h1>Hope as an Active Commitment</h1>
-    <ul class="klist">
-      <li>Not passive; a <strong>discipline</strong> to exercise.</li>
-      <li>An <strong>artisan craft</strong>: patiently rebuild, reconcile, repair.</li>
-      <li>Work even when results aren’t immediate.</li>
-    </ul>
-    <figure class="placeholder"><div class="ph">Hands crafting (potter/weaver)</div></figure>
-    <div class="notes">Processes over events.</div>
-  </div>
-</section>
-
-<!-- Slide 20 -->
-<section class="slide" data-index="20">
-  <div class="slide-inner cols reverse">
-    <figure class="placeholder"><div class="ph">Crisis → Hope (War→Peace, Despair→Life, Exclusion→Inclusion)</div></figure>
-    <div>
-      <div class="titlebar"><span class="pill">Conversion</span></div>
-      <h1>Signs of Crisis → Signals of Hope</h1>
-      <ul class="klist">
-        <li>Work for <strong>peace</strong>; refuse nihilism with <strong>life</strong>.</li>
-        <li>Care for the <strong>discarded</strong>: poor, elderly, young.</li>
-        <li>Seek <strong>redemption</strong> for the fallen.</li>
-      </ul>
-      <div class="notes">Make the mandate concrete.</div>
-    </div>
-  </div>
-</section>
-
-<!-- Slide 21 -->
-<section class="slide" data-index="21">
-  <div class="slide-inner">
-    <div class="titlebar"><span class="pill">Synodality</span></div>
-    <h1>A Synodal Conversion: Hope is Communal</h1>
-    <ul class="klist">
-      <li>Pushes back against individualistic “Jesus and me.”</li>
-      <li>Journeying <strong>together</strong>: people gather in Rome.</li>
-      <li>Faith is embodied, shared, dialogical.</li>
-    </ul>
-    <figure class="placeholder"><div class="ph">Diverse pilgrims walking a path • “Synodality”</div></figure>
-    <div class="notes">Link pilgrimage with synodal ecclesiology.</div>
-  </div>
-</section>
-
-<!-- Slide 22 -->
-<section class="slide" data-index="22">
-  <div class="slide-inner cols">
-    <div>
-      <div class="titlebar"><span class="pill">For Others</span></div>
-      <h1>Hope Is for Others</h1>
-      <p>Walter Benjamin: “Those for whom we are given hope are those <em>without</em> hope.”</p>
-      <ul class="klist">
-        <li>We bear hope <strong>on behalf of</strong> others.</li>
-        <li>Priority for those who have lost it.</li>
-      </ul>
-    </div>
-    <figure class="placeholder"><div class="ph">One hand pulling another up • Quote displayed</div></figure>
-    <div class="notes">Expand the moral responsibility of hope.</div>
-  </div>
-</section>
-
-<!-- Slide 23 -->
-<section class="slide" data-index="23">
-  <div class="slide-inner">
-    <div class="titlebar"><span class="pill">Traditio</span></div>
-    <h1>We Hope Because Others Hoped for Us</h1>
-    <ul class="klist">
-      <li>Hope is <strong>received</strong> — a gift passed through generations.</li>
-      <li>Ancestors, saints, communities: a <strong>chain of hope</strong>.</li>
-      <li>Our task: continue and hand it on.</li>
-    </ul>
-    <figure class="placeholder"><div class="ph">Relay/chain motif • Torch of hope across generations</div></figure>
-    <div class="notes">Locate ourselves within this tradition.</div>
-  </div>
-</section>
-
-<!-- Slide 24 -->
-<section class="slide" data-index="24">
-  <div class="slide-inner cols reverse">
-    <figure class="placeholder"><div class="ph">Diverse people looking to bright horizon • 2025 logo (placeholder)</div></figure>
-    <div>
-      <div class="titlebar"><span class="pill">Takeaway</span></div>
-      <h1>Conclusion: The Legacy of the Jubilee of Hope</h1>
-    <ul class="klist">
-        <li>Reject despair; embrace demanding, <strong>active</strong> hope.</li>
-        <li>Work together for a future we trust but do not control.</li>
-        <li>Faith in action for our time.</li>
-      </ul>
-      <div class="notes">Synthesize history, theology, and practice.</div>
-    </div>
-  </div>
-</section>
-
-<!-- Slide 25 -->
-<section class="slide" data-index="25">
-  <div class="slide-inner">
-    <div class="titlebar"><span class="pill">Thanks</span></div>
-    <h1>Q&amp;A / Thank You</h1>
-    <p class="muted">Questions? Discussion? Contact: <em>add your email / link</em></p>
-    <figure class="placeholder"><div class="ph">Clean end slide • “Thank You” • optional contact QR</div></figure>
-    <div class="notes">Final slide for questions and thanks.</div>
-  </div>
-</section>
-
-<!-- HUD / Controls -->
-<div class="hud">
-  <div class="progress" aria-label="Progress"><span id="progress"></span></div>
-  <div class="controls">
-    <button class="btn" id="prev" title="Previous (← / PageUp)" aria-keyshortcuts="ArrowLeft PageUp">◀ Prev</button>
-    <button class="btn" id="next" title="Next (→ / Space / PageDown)" aria-keyshortcuts="ArrowRight PageDown Space">Next ▶</button>
-    <button class="btn" id="notes" title="Toggle speaker notes (N)" aria-keyshortcuts="N">Notes ⓘ</button>
-    <button class="btn" id="fs" title="Fullscreen (F)" aria-keyshortcuts="F">Fullscreen ⛶</button>
-    <button class="btn" id="print" title="Print / Export to PDF (Ctrl/Cmd+P)">Print/PDF</button>
+    <div class="hscroll" onclick="go('ov')"><div class="arr"></div><span>Explore</span></div>
   </div>
 </div>
 
-  </div>  <script>
-    (function(){
-      const deck = document.getElementById('deck');
-      const slides = Array.from(deck.querySelectorAll('.slide'));
-      const progress = document.getElementById('progress');
-      const prevBtn = document.getElementById('prev');
-      const nextBtn = document.getElementById('next');
-      const notesBtn = document.getElementById('notes');
-      const fsBtn = document.getElementById('fs');
-      const printBtn = document.getElementById('print');
-      let idx = 0;
+<div id="scr-ov" class="screen">
+  <div class="ovh">
+    <h2 class="ovt">The Jubilee of Hope — Eight Theological Modules</h2>
+    <button class="btn bs" onclick="go('hero')">← Introduction</button>
+  </div>
+  <div class="mgrid" id="mgrid"></div>
+</div>
 
-      function clamp(n,min,max){ return Math.max(min, Math.min(n,max)); }
-      function show(i){
-        idx = clamp(i, 0, slides.length-1);
-        for(let j=0;j<slides.length;j++){ slides[j].classList.toggle('active', j===idx); }
-        progress.style.width = ((idx+1)/slides.length*100).toFixed(2)+'%';
-        try{ location.hash = '#'+(idx+1); }catch(e){}
-      }
-      function next(){ show(idx+1); }
-      function prev(){ show(idx-1); }
-      function toggleNotes(){ slides[idx].classList.toggle('show-notes'); }
+<div id="scr-det" class="screen">
+  <div id="dcont"></div>
+</div>
+<script>
+const M=[
+{id:'hist',num:'01',icon:'🏛️',nm:'The Jubilee in History',sb:'From Biblical Roots to Medieval Rome',
+ c:'#1a2744',dk:'#0d1a36',pl:'#e8edf5',
+ tags:['1300 AD','Boniface VIII','Crusades','Pilgrimage'],
+ prev:'Why the Catholic Jubilee has almost nothing to do with the biblical Jubilee — and why the Crusades are its surprising ancestor.',
+ sum:'The Catholic Jubilee is a stratified institution that borrows its name from the biblical Jubilee but fundamentally reinterprets it. The biblical Jubilee (Lev 25) was a social and economic reset — slaves freed, debts cancelled, land returned — with no requirement to travel anywhere. The Catholic Jubilee, by contrast, is a Roman institution tied to pilgrimage, indulgences, and the administrative power of the medieval papacy. Its ancestor is not Leviticus but the First Crusade (1095). Understanding this complex lineage is essential for honest theological reflection on what the 2025 Jubilee of Hope actually inherits — and what it must account for.',
+ ct:[
+  {t:'prose',l:'The Biblical Jubilee vs. The Catholic Jubilee',
+   tx:'<p>The name "Jubilee" comes from the Hebrew <em>yobel</em> — the ram\'s horn trumpet blown every fifty years in ancient Israel (Leviticus 25). In the biblical Jubilee, slaves were freed, debts cancelled, and land returned to its original families. Crucially, you did not have to travel anywhere. The Jubilee came to you. Its content was radically social and economic: it enacted God\'s absolute lordship over the land, overriding all human accumulations of wealth and power.</p><p>The Catholic Jubilee is something structurally different. It is a special year of grace and conversion involving prayer, pilgrimage, repentance — and, above all, travel to Rome. As Faggioli observes, "it is a very Catholic, and even more a very Roman Catholic institution" — grounded not in the theology of the liberation of the poor but in the administrative history of the medieval papacy at the apex of its temporal authority during the age of Christendom. The Catholic Church knows this full history, but "as every institution, has a certain reluctance to tell the whole story."</p>'},
+  {t:'illus',icon:'📯',l:'The Biblical Jubilee',
+   tx:'In Leviticus 25, every fiftieth year the ram\'s horn sounds across Israel: slaves are freed, debts are cancelled, alienated land reverts to its original families. No one travels. God brings liberation to his people where they are. This radical social vision — the periodic cancellation of economic inequality — is the origin of the word Rome would later borrow for a very different purpose.'},
+  {t:'tl',l:'Development of the Catholic Jubilee',items:[
+    {d:'1095',tx:'<strong>First Crusade (Pope Urban II).</strong> Crusaders promised a plenary indulgence in exchange for a dangerous journey to Jerusalem. The idea of spiritual reward tied to armed pilgrimage is born. Faggioli: "The papacy re-signified that very strong element in medieval culture — pilgrimage, travel — which was really a life-threatening experience, at real risk of your life."'},
+    {d:'1300',tx:'<strong>First Catholic Jubilee (Pope Boniface VIII).</strong> Note: Dante places Boniface in the Inferno. The indulgence concept transfers from Jerusalem-pilgrimage to Rome-pilgrimage. The Jubilee is a "spiritual crusade — and not an unarmed crusade." Initially planned every 100 years.'},
+    {d:'1343',tx:'<strong>Pope Clement VI</strong> reduces the interval to 50 years — echoing the biblical Jubilee cycle, though the theological content is entirely different.'},
+    {d:'1470',tx:'<strong>Pope Paul II</strong> establishes the current 25-year cycle, institutionalising what began as a one-off event into the regular rhythm of Catholic life.'},
+    {d:'1933',tx:'<strong>Pope Pius XI</strong> calls an extraordinary jubilee marking 1,900 years of the Redemption — demonstrating that jubilees can be called outside the regular cycle for specific commemorative reasons.'},
+    {d:'2015',tx:'<strong>Pope Francis: Year of Mercy</strong> — an extraordinary jubilee focused on mercy for divorced and remarried Catholics, gay people, and irregular situations. The tone is noticeably darker than the triumphalism of 2000 — a pope who feels it necessary to emphasise mercy is already saying something about the Church\'s state.'},
+  ]},
+  {t:'prose',l:'The Disturbing Ancestry: From Crusade to Jubilee',
+   tx:'<p>Faggioli is forthright about the most historically uncomfortable fact of the Catholic Jubilee: the element of travel — the very element that distinguishes the Catholic from the biblical Jubilee — does not come from Scripture. It comes from the Crusades. The logic that a dangerous journey to a specific sacred location earns spiritual reward was pioneered not in Leviticus but in the crusading era: go to Jerusalem (and fight), and your sins are forgiven.</p><p>Pope Boniface VIII in 1300 translated this logic into a peaceful register: go to Rome (and pray), and your sins are forgiven. But the underlying architecture — pilgrimage as meritorious act, physical danger as spiritual test — is crusading spirituality transferred into a peaceable context. Faggioli: "It exposes you to the temptation of painting the past of the Church with a very dark brush." He does not demand the pope confess this ancestry in every jubilee document. But intellectual honesty requires acknowledging it — and asking how we relate to an institution whose spiritual DNA includes conquest, coercion, and religious violence against Muslims and Jews.</p>'},
+  {t:'gq',tx:'"The jubilee becomes a spiritual crusade — and not an unarmed crusade. This is very important to understand: there is a connection between two apparently completely separated perceptions of what the Church is about today."',ci:'— Dr. Massimo Faggioli, Franciscan Renewal Center, Phoenix'},
+  {t:'prose',l:'From Pilgrimage to Tourism: A Second Transformation',
+   tx:'<p>Faggioli identifies a second major historical shift: from pilgrimage to mass tourism. Medieval pilgrimage was a life-threatening physical ordeal — weeks or months on dangerous roads, shared suffering, real risk of death. This bodily dimension was not incidental to the spiritual meaning. The Catholic sacramental imagination holds that what happens in the body matters spiritually.</p><p>Today, for most of those who travel to Rome for the Jubilee, the experience is packaged tourism: flights lasting hours, air-conditioned hotels, wifi throughout. The 2025 Jubilee is, as Faggioli notes, "the first jubilee that takes place in our conversation about over-tourism" — Roman residents expressing unprecedented fear about the destruction of their city\'s quality of life. Dante in Canto 18 of the Inferno already used the image of masses crowding near Castel Sant\'Angelo as a vision of hell. The theological question is not moralistic — it is sacramental: when travel costs nothing, when there is no shared risk or shared smell, what remains of the ancient pilgrimage\'s spiritual architecture?</p>'},
+  {t:'illus',icon:'🧳',l:'Illustration — Dante\'s Crowd',
+   tx:'In <em>Inferno</em> Canto 18, Dante describes the mass of pilgrims jamming the bridge near Castel Sant\'Angelo as an image of hell itself — the sacred and the chaotic, the spiritual and the commercial, inseparably mixed. The 2025 Jubilee is merely the modern version of this ancient tension, now aggravated by Instagram and over-tourism anxiety. The sacred still works through the bodily and the communal — but the conditions of modern life make this harder to achieve.'},
+ ]
+},
+{id:'jub20',num:'02',icon:'🕯️',nm:'Jubilees of the 20th Century',sb:'From Post-War Reconciliation to Year 2000',
+ c:'#4a6741',dk:'#2d3a18',pl:'#eef4e8',
+ tags:['1950','1966 Vatican II','1975 Television','Year 2000'],
+ prev:'The arc from the first post-war jubilee (1950) to the triumphant — and tragically premature — confidence of the Year 2000.',
+ sum:'The twentieth-century jubilees trace a remarkable arc in the Church\'s self-understanding. The 1950 jubilee was a first post-war reconciliation; the 1966 jubilee gave thanks for Vatican II and first decentralised the celebration; the 1975 jubilee entered the age of mass television; and the Year 2000 represented a Church that briefly believed it had turned the corner on its worst history — before 9/11, the abuse crisis, and the events of the 21st century shattered that confidence.',
+ ct:[
+  {t:'tl',l:'Major Jubilees of the Twentieth Century',items:[
+    {d:'1950 — First Post-War Jubilee',tx:'<strong>Reconciliation in ruins.</strong> Faggioli\'s German mentor: "For us it was the first moment when we felt we could go back to Rome in a different way than our parents had been there — as the occupying army." A genuine moment of first reconciliation between peoples who had fought in both World Wars. Simultaneously: the first jubilee of the Cold War, where being Catholic carried a very precise geopolitical alignment — anti-communist, pro-Western, bipolar.'},
+    {d:'1966 — Vatican II Jubilee (Paul VI)',tx:'<strong>First decentralisation of the jubilee.</strong> Pope Paul VI calls an extraordinary jubilee to give thanks for the Second Vatican Council (1962–65). Two theological innovations: (1) Key events in Rome, but Catholics participate locally — enacting Vatican II\'s theology of the local church\'s eminent dignity. (2) The world\'s cathedrals receive privileges previously reserved only to Rome\'s basilicas. The jubilee begins to reflect the Council\'s ecclesiology.'},
+    {d:'1975 — Television Jubilee (Paul VI)',tx:'<strong>First jubilee broadcast worldwide through television.</strong> Mass media transform Catholicism in ways impossible to fully measure. The shift from physical pilgrimage requiring weeks of dangerous travel to a televised event watchable from an armchair changes the relationship between bodily presence, community, and spiritual experience that the jubilee had originally assumed.'},
+    {d:'1983 — 1,950 Years of Redemption (John Paul II)',tx:'<strong>Beginning of the "purification of memory."</strong> John Paul II begins his systematic use of jubilees as instruments for confronting the difficult chapters of Church history — the Crusades, anti-semitism, religious wars — before the international court of public opinion. This six-year preparation for the Year 2000 is among his greatest ecclesial achievements.'},
+    {d:'2000 — The Great Jubilee (John Paul II)',tx:'<strong>The triumphant Church.</strong> Faggioli was in the Vatican archives 1998–2001: "You could really see a Church that had a much more sure sense of itself — almost a triumphant Church." John Paul II had helped defeat communism, completed the rapprochement with Judaism (prayer at the Western Wall), and presided over the pre-abuse crisis, pre-9/11 Church. "We thought the worst was over. History as a series of crimes — maybe that\'s over. We have learned."'},
+  ]},
+  {t:'gq',tx:'"In 2000, it was a very confident Church — and also a very confident world. No one was talking about the environmental crisis. For everything there seemed to be a technological solution. We thought, in some sense, that history was over."',ci:'— Dr. Massimo Faggioli, Franciscan Renewal Center, Phoenix'},
+  {t:'prose',l:'John Paul II and the Purification of Memory',
+   tx:'<p>The Year 2000 was the culmination of six years of preparation begun with John Paul II\'s 1994 document <em>Tertio Millennio Adveniente</em>. He understood the jubilee as a moment of "purification of memory" — a European Catholic from Poland who had lived through World War II, the Holocaust, and the Cold War knew that there were things to account for in history, especially the complicity of European Christianity in the catastrophes of the 20th century.</p><p>The years 1994–2000 involved a series of public acts of contrition and reconciliation: the acknowledgment of Christian complicity in anti-semitism, the Crusades, the Inquisition, the treatment of minorities. The crowning moment: John Paul II\'s prayer at the Western Wall in Jerusalem — "the number one thing that John Paul II accomplished," according to Faggioli. A new chapter had genuinely begun in the Church\'s relationship with Judaism and the Jewish people.</p>'},
+  {t:'compare',l:'Year 2000 vs. Jubilee 2025',
+   fa:{l:'Year 2000 — The Confident Church',bg:'#eef4e8',lc:'#4a6741',
+    items:['Pre-abuse crisis: scandal not yet broken systematically','Pre-9/11: 20th century\'s horrors seemed behind us','John Paul II triumphant — "pope who defeated communism"','Church had "solved" anti-semitism (Western Wall prayer)','Technology promised limitless progress; internet opened horizons','A strong, outward-facing Church sure of its place in the world']},
+   ag:{l:'Jubilee 2025 — The Uncertain Church',bg:'#fdf0f0',lc:'#8b1a1a',
+    items:['Post-abuse crisis: deep institutional credibility damage','Sede vacante: jubilee continues without its initiator','Post-Francis: Church more divided, synodality contested','Wars in Ukraine and Gaza: peace an urgent emergency','Climate anxiety; sense of "expiration time"','Polarisation, populism, authoritarian nationalisms rising']}},
+ ]
+},
+{id:'hope',num:'03',icon:'✨',nm:'Theology of Hope',sb:'What "Spes Non Confundit" Really Means',
+ c:'#8b1a1a',dk:'#5a0000',pl:'#fdf0f0',
+ tags:['Romans 5:5','Kataischuno','Not Optimism','Christological'],
+ prev:'The theological heart of the 2025 Jubilee: why Christian hope is not optimism, not a feeling, not a state of mind — but a Christological commitment that can never shame you.',
+ sum:'The 2025 Jubilee is called the Jubilee of Hope, but "hope" requires precise theological definition. Faggioli constructs a rigorous theology of hope by unpacking the Greek verb kataischuno (Romans 5:5), distinguishing hope from optimism, and drawing on Pope Francis\'s autobiography, Walter Benjamin\'s paradox, and the Christological foundation of hope as a virtue. The result is a challenging, counter-cultural claim: that to hope in the current moment is not naive but courageous — and that it is not an individual achievement but a communal inheritance.',
+ ct:[
+  {t:'prose',l:'The Bull of Indiction: Spes Non Confundit (May 2024)',
+   tx:'<p>When Pope Francis proclaimed the Jubilee of 2025 in his apostolic bull published in May 2024, he chose Romans 5:5 as his theological anchor: <em>Spes autem non confundit</em> — "Hope does not disappoint." Faggioli notes that the word "hope" is "one of the most important words in Pope Francis\'s language, very rooted in the Second Vatican Council and in the last document of Vatican II — Gaudium et Spes (1965): the joys and hope of humanity are the joys and hope of the Church."</p><p>But the Greek original is more precise and more demanding than the usual translations suggest. The verb rendered "does not disappoint" is <em>kataischuno</em> — and it does not merely mean disappointment. It means being made ashamed. Hope does not put us to shame. This matters because, as Faggioli observes, "there is something that can sound embarrassing today: to say that you are hopeful. It goes against a certain expectation that people have." In a culture saturated by cynicism and despair, declaring yourself hopeful risks appearing naive, deluded, even politically irresponsible. Paul\'s answer: this hope will never make you ashamed of having hoped — not because circumstances will improve, but because hope is grounded not in circumstances but in the Resurrection of Jesus Christ.</p>'},
+  {t:'gq',tx:'"For Paul, hope is personified by Jesus Christ. From the Incarnation onwards, hope is reliable — something we rely on as we rely on God who is the protagonist of the history of salvation. It is the conviction that every promise of God is brought to a fulfilment that exceeds the promise. So it is a Christological theological idea of hope. It is not just different from optimism — it is the complete opposite."',ci:'— Dr. Massimo Faggioli, Franciscan Renewal Center, Phoenix'},
+  {t:'cards',l:'Eight Theses on Christian Hope',items:[
+    {icon:'❌',ti:'NOT Optimism',b:'Optimism is a temperamental tendency — a glass-half-full way of processing experience. It depends on how things seem. Theological hope is grounded not in current appearances but in the promise and character of God. Faggioli: "It is not just different from optimism — it is the complete opposite."'},
+    {icon:'❌',ti:'NOT a State of Mind',b:'States of mind fluctuate with health, news, circumstances. Pope Francis, Faggioli notes, had "a very strong, non-bourgeois, non-middle-class sense of shame." The hope he proclaimed was not a comfortable feeling but a quality of soul requiring discipline and formation.'},
+    {icon:'❌',ti:'NOT Restoration of the Past',b:'"Hope is not about the restoration of a previous situation. Hope is not: let\'s go back to some moment when everything was fine." This challenges both progressive nostalgia (the Church of the 1960s) and traditionalist nostalgia (the pre-Vatican II Church). Hope faces forward. It does not idealise a past golden age.'},
+    {icon:'❌',ti:'NOT About Me',b:'"Hope is not about asserting yourself. Hope is about us." Walter Benjamin\'s paradox: we hope not for ourselves but for those who cannot hope for themselves. Christian hope is a communal act of trust, not a private resilience strategy.'},
+    {icon:'✅',ti:'A Theological Virtue',b:'As one of the three theological virtues (faith, hope, charity), hope is not a human achievement but a gift poured into the heart by the Holy Spirit (Romans 5:5). Its reliability comes not from circumstances but from the character of God who raised Jesus from the dead.'},
+    {icon:'✅',ti:'Christological',b:'"From the mouth of Moses onwards, hope is reliable." Jesus Christ is hope personified. In the Paschal Mystery — death and resurrection — hope is not a prediction that things will improve. It is the demonstration that defeat is not the final word on human existence.'},
+    {icon:'✅',ti:'A Commitment and a Muscle',b:'"Hope is a commitment. You do not give up at the first crisis." Faggioli uses the image of a muscle: hope can be exercised, trained, made more flexible, conditioned to absorb blows and recover. It requires daily fidelity, not a single heroic act.'},
+    {icon:'✅',ti:'Communal and Inherited',b:'"We hope because others have already hoped." There is a work of education to hope — replacing cultures of despair, revenge, and payback. Hope has ecclesial, religious, human, and political dimensions. We hope for those who cannot hope for themselves. We hope in a tradition of witnesses who hoped before us.'},
+  ]},
+  {t:'gq',tx:'"Those for whom we are given hope are those without hope." — Walter Benjamin, writing in 1940 as the Gestapo closed in on him. He killed himself that year, fearing capture. Faggioli uses this as the best secular definition of Christian hope: we hope not because we expect things to turn out well for us, but because the hopeless require someone to hope on their behalf.',ci:'— Walter Benjamin (1940), quoted by Dr. Massimo Faggioli'},
+  {t:'illus',icon:'💪',l:'Hope as Muscle',
+   tx:'Faggioli draws on Pope Francis\'s image: "Hope is like a muscle. It can be exercised. It can become more flexible, more able to extend, to take blows, to overcome moments of crisis. It takes practice. It takes self-discipline." This is a deeply practical spiritual theology. Hope is not a lightning bolt — not a sudden infusion of supernatural confidence. It is the accumulated result of daily choices to trust in the God who raised Jesus from the dead, even when the evidence appears to contradict any basis for trust.'},
+ ]
+},
+{id:'franc',num:'04',icon:'🌿',nm:'Pope Francis and the Jubilee',sb:'From Mercy to Hope: His Pontificate\'s Legacy',
+ c:'#4a5e2a',dk:'#2d3a18',pl:'#eef4e8',
+ tags:['Mercy 2015','Hope 2025','Synodality','Autobiography'],
+ prev:'Why the 2025 Jubilee is Francis\'s jubilee even after his death — and what his life reveals about the kind of hope he left the Church.',
+ sum:'The Jubilee of Hope 2025 is Pope Francis\'s jubilee — his last public theological act — even though he died in April 2025 in the middle of it. The shift from his 2015 Year of Mercy to the 2025 Year of Hope reveals a deepening of his theological diagnosis of the Church and world. His autobiography, his devotion to Mary, his insistence on the physical and communal dimensions of Christian practice, and his artisan approach to rebuilding broken relationships all illuminate what he meant when he said: hope is a commitment, not a feeling.',
+ ct:[
+  {t:'prose',l:'From Mercy (2015) to Hope (2025): A Spiritual Thermometer',
+   tx:'<p>Faggioli draws attention to a telling evolution in Pope Francis\'s use of jubilee themes. His 2015 extraordinary jubilee was centred on mercy — mercy for divorced and remarried Catholics, for gay people, for those in irregular situations. This was primarily an intra-ecclesial agenda: what the Church could and should offer to its own wounded members, who had felt excluded by institutional rigidity.</p><p>By 2025, Francis had moved to hope — a theological virtue addressed not just to Church members but to all humanity. Andrea Riccardi, founder of the Community of Sant\'Egidio, had described the contemporary era as the <em>tristissimo</em> — the "sad age," the age of sadness and absence of hope. Francis\'s response was not a programme, not a document, not a reform agenda. It was a jubilee. "That says a lot about his perception of the world between 2015 and 2025."</p>'},
+  {t:'gq',tx:'"There should be a whole study, a whole book, on what it means when the same person says \'we need mercy\' and then a few years later says \'we need hope\' — it says something very specific about how he understood our world."',ci:'— Dr. Massimo Faggioli, Franciscan Renewal Center, Phoenix'},
+  {t:'cards',l:'Francis\'s Theological Vision for the Jubilee',items:[
+    {icon:'🤲',ti:'The Primacy of Physicality',b:'"The worst possible thing I can imagine is a jubilee on Zoom. You do not touch anybody. You do not smell anybody. That is not real life." For Francis, the Christian experience is sacramental — it involves the whole body. The Jubilee preserves this bodily, communal dimension against the individualisation and virtualisation of contemporary spiritual life. The Incarnation guarantees that the body matters.'},
+    {icon:'🧵',ti:'The Artisan of Hope',b:'Francis used the image of an artisan for peacemaking, hope, and reconciliation. Hope is not a programme or a system. It is crafted by hand, slowly, in concrete encounters. His own life — as his autobiography reveals — was a constant artisan effort to rebuild broken relationships: with estranged family members, with Jesuit brethren, with those he had hurt or who had hurt him.'},
+    {icon:'🔄',ti:'Synodal Conversion',b:'"The jubilee was really part of a synodal conversion — trying to save the religious experience of many Catholics from an individual \'Jesus and me\' arrangement." The Jubilee, precisely because it is physical and communal, serves the synodal project: reminding Catholics that the Church is a <em>we</em>, not an <em>I</em>.'},
+    {icon:'🌍',ti:'The End of an Era',b:'"We are at the end of a certain era." Francis said this many times. Not an era of the Church specifically — an era of Western civilisation, of unlimited growth, of the assumption that technology solves everything, of the established Church. The Jubilee of Hope is addressed to a Church that knows it is at the end of something and cannot yet see what comes next.'},
+    {icon:'📿',ti:'Devotion and the Virgin Mary',b:'A striking paradox: "The allegedly most liberal pope in the last century was incredibly devout to the Virgin Mary, and he was buried in Santa Maria Maggiore." Francis\'s hope was not a liberal programme. It was a personally embodied, Marian, Eucharistic faith. He wore the faith on his body. His hope was spiritual before it was theological.'},
+    {icon:'📖',ti:'The Autobiography: Reconnecting Broken Threads',b:'"His whole life was an attempt to reconnect some dots, some threads that were broken — a constant attempt with members of his family, members of his own Jesuit order. A really artisan work, a craft of rebuilding relationships." This personal biography is the lived hermeneutic of the Jubilee\'s hope.'},
+  ]},
+  {t:'illus',icon:'⚱️',l:'Francis Buried in Santa Maria Maggiore',
+   tx:'Pope Francis was buried, by his own request, not in the Vatican grottos alongside his predecessors but in the Basilica of Santa Maria Maggiore — where he had prayed silently before and after every major foreign journey of his pontificate. The choice was characteristic: intimate, Marian, outside the triumphalist funerary tradition of the papacy. A pope of hope chose to end his pontificate in the house of the woman whose <em>fiat</em> made hope incarnate.'},
+  {t:'gq',tx:'"The jubilee is part of how Francis understood the Christian proposal. It is not an ideology. It is not a system. And most importantly it is not an intellectual option — not something you embrace because it convinces you intellectually, because on the board that equation works. It is something that you do with others and for others."',ci:'— Dr. Massimo Faggioli, Franciscan Renewal Center, Phoenix'},
+ ]
+},
+{id:'vat2',num:'05',icon:'📜',nm:'Vatican II and the Jubilee of Hope',sb:'The Gaudium et Spes Connection',
+ c:'#7D4E0F',dk:'#4a2e08',pl:'#f5ede0',
+ tags:['Gaudium et Spes','Signs of the Times','Reception','Crisis of Authority'],
+ prev:'How the Jubilee of Hope directly inherits Vatican II\'s final word — and why the crisis of the Council\'s reception is also a crisis of hope.',
+ sum:'Pope Francis\'s choice of "spes" as the key word of his jubilee is a direct echo of Vatican II\'s last and longest document: Gaudium et Spes (Joy and Hope), 1965. The theological method of GS — reading the "signs of the times" in the light of the Gospel — is the method of the Jubilee of Hope. But in his Paluch Lecture (2024), Faggioli argues that Vatican II\'s authority is now in deep crisis — challenged by the abuse scandal, postcolonial consciousness, and a broken sense of history. The Jubilee is one moment when this generative tradition can be honestly re-inherited.',
+ ct:[
+  {t:'prose',l:'From Gaudium et Spes to Spes Non Confundit',
+   tx:'<p>The connection between the 2025 Jubilee and Vatican II is not superficial or merely lexical. The word <em>spes</em> — hope — is the second word in the title of Vatican II\'s final and longest document: <em>Gaudium et Spes</em> (Joy and Hope), promulgated December 7, 1965. The document opens with the most famous sentence in all of Vatican II: "The joys and hopes, the griefs and anxieties of the people of this age, especially those who are poor or in any way afflicted — these are the joys and hopes, the griefs and anxieties of the followers of Christ."</p><p>This sentence is the theological DNA of the Jubilee of Hope. When Francis says that hope is not a private mood but a communal commitment of the Church to humanity — especially to those who suffer — he is repeating GS §1 verbatim in spirit. When he says the Church must read the "signs of the times," he is using the precise methodology of GS §4. When he insists the solution is not to look backward with nostalgia but forward with hope, he is following the Council\'s own injunction.</p>'},
+  {t:'gq',tx:'"Hope — <em>spes</em> — is really one of the most important words in Pope Francis\'s language, which was very rooted in the Second Vatican Council and in the last document of the Second Vatican Council: <em>Gaudium et Spes</em>, 1965. The joys and hope of humanity are the joys and hope of the Church."',ci:'— Dr. Massimo Faggioli, Franciscan Renewal Center, Phoenix'},
+  {t:'cards',l:'Vatican II\'s Reception in Crisis — Four Dimensions',items:[
+    {icon:'💔',ti:'The Abuse Crisis',b:'The abuse crisis has produced what Faggioli calls "a hermeneutic of suspicion" so radical that the Church\'s entire institutional past appears as a system of organised harm. Vatican II\'s optimistic anthropology — human dignity, the goodness of earthly realities, human progress — has been shattered by revelation that the Church\'s own structures enabled systematic abuse for decades.'},
+    {icon:'🌍',ti:'Postcolonial Consciousness',b:'"Vatican II is now read through a postcolonial or decolonial lens in ways not practised just 10 years ago." The documents were written almost entirely by white European men. Their confident universalism — "the Church for all humanity" — looks, from the Global South, like a sophisticated form of cultural imperialism. The "human dignity" they proclaimed carried an unconsciously Western, Enlightenment-inflected content.'},
+    {icon:'⚧',ti:'Women and Gender',b:'"Why are we discussing the reality of the Church when half of the Church is not even represented here?" (Cardinal Suenens, 1963). Twenty-three women were admitted as auditors — in 1963, at the second session of a four-session council. The asymmetry between lived Vatican II Catholicism and its scholarship remains a structural wound in the tradition.'},
+    {icon:'🔥',ti:'The Broken Sense of History',b:'"Historia magistra vitae" — history as the teacher of life — was Vatican II\'s operating assumption. But this principle has collapsed. When history is identified with systems of oppression, the past ceases to teach and begins only to indict. The result is a "burn it all down" impulse that paradoxically makes genuine reform less, not more, likely.'},
+  ]},
+  {t:'gq',tx:'"Vatican II is often seen as a failed revolution, a failed promise of reform. I believe this is a wrong assessment — but we need to recognise that we find ourselves in a situation where the narratives of Vatican II from the 1980s and 1990s can no longer be used with the same effect. We come from a post-Vatican II that found one of its expressions in a message of liberation. But now we seem to find ourselves in a despairing theology of victimisation."',ci:'— Dr. Massimo Faggioli, Paluch Lecture, Mundelein Seminary, 2024'},
+  {t:'prose',l:'What Remains of Vatican II?',
+   tx:'<p>Faggioli\'s answer is clear but demanding. The minimum is not a specific doctrine or practice. It is an act of faith: trust in the Church that gave us Vatican II. Not naive, uncritical trust — but a living faith that the Holy Spirit was genuinely at work in the Council. "If we start by saying Vatican II was not a real Council, what kind of ecclesiology is there? What kind of sense of the Church?"</p><p>Beyond this minimum: tradition is a <em>we</em>, not an <em>I</em>. Memory is not a tool for personal identity construction — it is a shared inheritance belonging to the whole community: the living, the dead, and those yet to be born. When tradition is reduced to a resource for identity politics — progressive or traditionalist — it has ceased to be tradition. The Jubilee of Hope is a moment when this communal inheritance can be re-claimed.</p>'},
+ ]
+},
+{id:'leo',num:'06',icon:'🦁',nm:'After Francis: Pope Leo XIV',sb:'The Pan-American, Global, Roman Pope',
+ c:'#1a2744',dk:'#0d1a36',pl:'#e8edf5',
+ tags:['Robert Prevost','Chicago','Augustinian','Unity & Peace'],
+ prev:'How the first American pope — Robert Francis Prevost, OSA — continues and complicates the Jubilee\'s legacy of hope in a world at war.',
+ sum:'Pope Leo XIV (Robert Francis Prevost, elected May 2025) is simultaneously Pan-American, global, and deeply Roman. Born in Chicago, educated at the Angelicum, Superior General of the Augustinians, twenty years in Peru, Prefect of the Dicastery for Bishops in Rome: he is a unique synthesis of post-Vatican II Catholicism. His election breaks a historic taboo and raises urgent new questions about the relationship between global Catholicism and the United States under the MAGA project — questions the Jubilee\'s theology of hope now urgently addresses.',
+ ct:[
+  {t:'prose',l:'Breaking the Taboo: The First American Pope',
+   tx:'<p>The election of Robert Francis Prevost as Pope Leo XIV on May 8, 2025 broke what Faggioli calls "a huge taboo in Church history." Cardinal Francis George of Chicago had stated it explicitly in the early 2000s: "The Catholic Church will have a pope from the United States only when America enters a state of political decline." Whether that decline is underway is a question Faggioli declines to answer definitively — but the fact that the taboo was broken at this particular moment, in the era of Trump and MAGA, is not incidental.</p><p>The Vatican and the United States have for two centuries been, in Faggioli\'s phrase, "parallel empires" — sometimes aligned, sometimes in tension, but never in open collision. This is a different moment. The United States is measuring its distance from Europe and from its postwar allies differently. Rome — the Vatican, its symbols, its moral authority — has become what an Italian church historian calls "the moral equivalent of Greenland": a prize to be acquired, a symbol of cultural legitimacy to be co-opted. Leo must navigate this without becoming either an instrument of American power or its reflexive opponent.</p>'},
+  {t:'gq',tx:'"The Catholic Church will have a pope from the United States only when America enters a state of political decline." — Cardinal Francis George, Chicago. Faggioli: "It is something to take seriously." Just three days after Leo\'s election, Donald Trump posted an AI-generated image of himself dressed as a pope on social media — "not a joke, a claim on American Catholics."',ci:'— Cardinal Francis George (early 2000s), cited by Dr. Faggioli, Dublin, 2025'},
+  {t:'cards',l:'Three Identities of Pope Leo XIV',items:[
+    {icon:'🌎',ti:'Pan-American',b:'Born in Chicago; twenty years in Peru; former Prefect of the Dicastery for Bishops. Leo synthesises North and South American Catholicism — the most advanced incarnation of post-Vatican II theology was forged in Latin America, and Leo carries that inheritance alongside his US background. His early confrontation of Opus Dei\'s role in Latin America signals a pan-American horizon not reducible to US concerns.'},
+    {icon:'🌍',ti:'Global',b:'As former Superior General of the Augustinians (a worldwide order), Leo has a breadth of encounter with global Catholicism rare in recent pontifical history. Faggioli compares his formation to John XXIII\'s service as nuncio in Bulgaria, Turkey, Greece, and France — a kind of global pastoral experience that produces a different papacy than one formed only in the Roman Curia.'},
+    {icon:'🏛️',ti:'Roman',b:'Educated at the Angelicum; deep curial experience as Prefect of Bishops; canon lawyer. "Remarkable in its own way, because after Vatican II we thought Vatican II theology and canon law were polar opposites — and we are finding out that maybe that is not necessarily true." His Roman curriculum gives him institutional competence without narrowing his pastoral horizon.'},
+  ]},
+  {t:'illus',icon:'🗺️',l:'The Lampedusa Subtweet',
+   tx:'Pope Leo XIV received an invitation to visit the United States in 2026 for the 250th anniversary of the Declaration of Independence. His answer: he announced he would spend the 4th of July on the island of Lampedusa — Europe\'s frontline of the refugee crisis, where thousands of African migrants have drowned in the Mediterranean. Faggioli: "That is the diplomatic equivalent of a subtweet on social media — very direct, without naming the interlocutor." The Church of the poor vs. the nationalism of MAGA: the message could not be clearer, or more in continuity with the Jubilee\'s theology of hope for those without hope.'},
+  {t:'cards',l:'The Challenges Shaping Leo\'s Pontificate',items:[
+    {icon:'⚔️',ti:'War and Peace',b:'The question of war and peace may shape — and Faggioli fears will shape — Leo\'s entire pontificate. The doctrine of just war is being rediscovered in a Europe rearming after decades of peace. Having a pope from a country whose foreign policy establishment invokes "Jesus and Scripture at Pentagon press conferences" creates pastoral and political stakes of the highest order.'},
+    {icon:'🤖',ti:'AI and Human Dignity',b:'Peter Thiel\'s invitation-only lectures on "the Antichrist" — delivered near the Vatican — represent the polar opposite of what is coming from Church teaching on AI and humanity. Leo\'s expected first encyclical — <em>Magnifica Humanitas</em> (Wonderful Humankind) — will need to engage this question with the full weight of the Augustinian and Catholic humanist tradition.'},
+    {icon:'🔁',ti:'Continuity with Francis?',b:'"Leo is not the anti-Francis that some people wanted or feared. But he is not the liberal that the anti-Trump wing hoped for either." He is not Francis 2.0. But his choice to begin his general audiences with a complete catechetical course on the documents of Vatican II signals deep theological continuity with the ressourcement tradition — de Lubac, Congar, Ratzinger — that gave us the Council and, through the Council, the Jubilee of Hope.'},
+    {icon:'⚖️',ti:'Unity as Augustinian Theme',b:'Leo\'s early pontificate emphasises unity and catholicity — deeply Augustinian themes for a former Augustinian superior. Where Francis was a disruptor, Leo seems oriented toward patient, constructive unity. The jubilee\'s legacy — hope for all humanity — requires the Church itself to first model the unity it proclaims.'},
+  ]},
+ ]
+},
+{id:'hists',num:'07',icon:'📚',nm:'Catholicism and the Sense of History',sb:'Historia Magistra Vitae and Its Collapse',
+ c:'#512E8E',dk:'#2d1a55',pl:'#f0e8f7',
+ tags:['Historia Magistra','Memory','Poly-Crisis','Tradition'],
+ prev:'Faggioli\'s deepest argument: the Catholic crisis is fundamentally a crisis of historical consciousness — and without a sense of history, hope becomes impossible.',
+ sum:'In his Paluch Lecture (Mundelein, 2024), Faggioli argues that beneath all the institutional, financial, and political crises of contemporary Catholicism lies a deeper crisis: the collapse of the principle that history is the teacher of life. The Catholic tradition has always understood its identity through a particular relationship with the past — the accumulated inheritance of Scripture, the Fathers, the Councils. This relationship is now fractured, and without it, the tradition cannot be transmitted, hope cannot be grounded, and the Church cannot read the signs of the times.',
+ ct:[
+  {t:'prose',l:'Historia Magistra: The Classical Principle',
+   tx:'<p>The Latin phrase <em>historia magistra vitae</em> — history as the teacher of life — comes from Cicero. It governed the Catholic Church\'s relationship with its past for centuries. The Church\'s tradition is the accumulated teaching of history — Scripture, the Fathers, the Councils, the saints — offered to each generation as guidance for the present. To know your tradition was to know how to live.</p><p>Pope John XXIII invoked this principle explicitly in his opening address of Vatican II (October 11, 1962), criticising the "prophets of doom" who saw only decline: "These prophets of doom keep repeating that our times have been getting worse, and they act as if they have nothing to learn from history, which is the teacher of life." John XXIII — trained as a church historian — made his case for the Council on the basis that history teaches, that reform is always possible, and that the Catholic past — even its most uncomfortable chapters — has wisdom to offer the present.</p>'},
+  {t:'gq',tx:'"We believe we must disagree with these prophets of doom who are always forecasting disaster as if the end of the world were at hand." — Pope John XXIII, opening Vatican II, October 11, 1962. This was not naive optimism. It was a historical claim: the Church has always come through its crises, always learned from them, always found new ways to be faithful.',ci:'— Gaudet Mater Ecclesia, Pope John XXIII, October 11, 1962'},
+  {t:'prose',l:'Three Forces That Have Broken the Historical Principle',
+   tx:'<p><strong>First, the abuse crisis</strong> has created a "hermeneutic of suspicion" so radical that the entire past of the Church appears as a system of organised harm. When institutional history is read primarily as the history of the abuse of vulnerable people, the past ceases to teach and begins only to indict. Faggioli: "A Christian path as a Pantheon of Terror which makes oppression inevitable and history irredeemable."</p><p><strong>Second, postcolonial consciousness</strong> has reframed the Church\'s entire missionary history as cultural and political imperialism. The Catholic humanist tradition — confident in the capacity of human reason illuminated by faith to build civilisations — looks from many vantage points like a sophisticated rationale for conquest.</p><p><strong>Third, the digital and social media environment</strong> has replaced historical consciousness with presentism — the habit of weighing the past against today\'s moral categories and finding it guilty. Memory is no longer the transmission of wisdom across generations. It is the curation of one\'s identity narrative. The "I" has swallowed the "we."</p>'},
+  {t:'cards',l:'The Pathologies of a Broken Historical Consciousness',items:[
+    {icon:'📸',ti:'Presentism',b:'"Our modern habit of weighing the past against the social concerns and moral categories of the present." Every historical period is judged not on its own terms but against today\'s standards. The entire Catholic past fails. Paradoxically, this hyper-moralising approach makes genuine moral progress less likely — it produces self-righteousness rather than conversion.'},
+    {icon:'🏆',ti:'Memorialisation',b:'"The effort to neutralise the discontinuities as sentimentality of the veterans." Some progressive Catholics have turned Vatican II into a nostalgic monument — "we who were there" — a tribute to their generation rather than a living inheritance. This is the Catholic version of veterans who cannot let the war end.'},
+    {icon:'🔥',ti:'"Burn It All Down"',b:'The mirror image of nostalgic memorialisation: the entire Catholic past is a system of oppression from which nothing can be inherited. This destructive impulse produces not liberation but spiritual homelessness. You cannot build justice on ground from which all foundation has been destroyed.'},
+    {icon:'⚖️',ti:'History as Tribunal',b:'"History becomes a tribunal where the ultimate judgement does not come from God but from historians or journalists." When the secular tribunal replaces the Last Judgement, the result is not justice but a new form of despair — one in which the past is permanently guilty and the future is permanently suspect.'},
+  ]},
+  {t:'gq',tx:'"There are serious risks if our approach to Church history becomes a reversal of the history of salvation and takes instead the shape of a history of terror — a Pantheon of Terror which makes oppression inevitable and history irredeemable. This would devoid the story of the human person of meaning and would paralyse any fight for justice and peace."',ci:'— Dr. Massimo Faggioli, Paluch Lecture, Mundelein Seminary, 2024'},
+  {t:'prose',l:'The Minimum: An Act of Faith in the Church',
+   tx:'<p>When asked what minimum of shared meaning must be preserved for the tradition to survive, Faggioli\'s answer was: not a specific doctrine or practice, but an act of faith — trust in the Church that gave us Vatican II. "If you start by saying Vatican II was not a real Council, what kind of ecclesiology is there? What kind of sense of the Church?" This is the irreducible minimum: the conviction that the Holy Spirit was at work in the Council, that it was a genuine ecclesial event, that it belongs to the living tradition.</p><p>Beyond this: <strong>tradition is a <em>we</em>, not an <em>I</em>.</strong> "The tradition is us — it is not an I." Memory is not a tool for personal identity construction. It is a shared inheritance belonging to the whole community: the living, the dead, and those yet unborn. Restoring this sense of collective inheritance is itself an act of hope — the hope that we are not the last generation, that what we receive can be handed on, that the river of witnesses continues.</p>'},
+ ]
+},
+{id:'time',num:'08',icon:'⏳',nm:'The Jubilee and Sacred Time',sb:'Interrupting, Accelerating, Suspending Time',
+ c:'#B7770D',dk:'#7d5200',pl:'#fef9e7',
+ tags:['Sacred Time','Expiration','End of an Era','Eschatology'],
+ prev:'The Jubilee as a theological intervention in time itself — and why it matters most when humanity feels time is running out.',
+ sum:'A jubilee is not merely a celebration or a commemoration. It is a theological intervention in time — a sacred interruption of ordinary history. In the current moment, when humanity has a pervasive sense of "expiration time" (the French philosopher Jean-Pierre Dupuy\'s phrase), when the Church is navigating the transition from Francis to Leo XIV, and when Faggioli speaks of "the end of a certain era," the jubilee\'s function as a structure of hope takes on acute urgency. Against the entropy of history, it says: time belongs to God, not to decay. The last word is not expiration — it is fulfilment.',
+ ct:[
+  {t:'prose',l:'The Jubilee as a Structure of Sacred Time',
+   tx:'<p>The Catholic Jubilee is, Faggioli argues, not primarily an institution or a programme — it is a structure of time. It interrupts ordinary time. It creates a sacred pause in which the normal logic of history — accumulation, debt, decline, entropy — is suspended and something else becomes possible. This is why jubilees were called <em>anni santi</em>, "holy years" — years set apart from the normal calendar of commerce, conflict, and politics.</p><p>This structural function is deeply rooted in the biblical tradition. The Sabbath is the weekly interruption; the sabbatical year the annual interruption; the Jubilee the generational interruption. All three perform the same theological function: they remind humanity that time does not belong to us. We do not own time; we inhabit it as a gift from the God who created it. The Jubilee is the Church\'s institutional embodiment of this conviction — enacted in a specific place (Rome, the local churches), in a specific time (a holy year), with specific practices (pilgrimage, reconciliation, indulgence).</p>'},
+  {t:'cards',l:'Four Modes of Jubilary Sacred Time',items:[
+    {icon:'⏸️',ti:'Interruption',b:'"There are interruptions in time." A jubilee interrupts the normal flow of decline and accumulation. It says: this is not just another year. The rules are different. Something new is possible. The plenary indulgence is not magic — it is a liturgical sign that the arithmetic of sin and guilt is not the final word on human existence.'},
+    {icon:'⏩',ti:'Acceleration',b:'"There are accelerations in time." At certain moments, what normally takes decades happens in years. Vatican II was such an acceleration — sixty years of theological ressourcement compressed into four conciliar sessions. The 1966 jubilee was an attempt to ritualise and hold this acceleration before ordinary time reasserted its gravity.'},
+    {icon:'🔁',ti:'Suspension',b:'"There are suspensions in time." The jubilee is a foretaste of eternity — a moment when the pressure of the present is lifted and the eternal horizon becomes briefly visible. This is why even modern, touristic pilgrimage retains some of its ancient function: on the road, ordinary time is suspended. Other conversations become possible. New configurations of community emerge.'},
+    {icon:'❓',ti:'Unknown Time',b:'"Ultimately there is a time we do not know — and that is what we need to be ready for." This is the eschatological horizon of the jubilee: we do not know when history ends; we do not know what comes after. The Jubilee is an exercise in readiness — not the readiness of the anxious, but the readiness of those who trust that the God of history is also the God of what comes after history.'},
+  ]},
+  {t:'illus',icon:'⌛',l:'Expiration Time vs. Jubilary Time',
+   tx:'Jean-Pierre Dupuy coined "expiration time" to describe the contemporary mood: a pervasive sense that somewhere there is an expiration date on civilisation — on the climate, on democracy, on social cohesion — and that we are afraid to know what that date is. Against this temporal anxiety, the Jubilee offers a counter-structure: time is not running out toward an expiration. Time is running toward a fulfilment. The difference is the difference between despair and hope — and it is the difference the Jubilee exists to enact and proclaim.'},
+  {t:'gq',tx:'"We have this sense that we live in what a French philosopher called \'expiration time\' — there is an expiration date somewhere and we are afraid to know what that date is. And yet: hope is not something we can choose not to have. Hope is not about predicting the future. It is about relating to the God who raised Jesus from the dead."',ci:'— Dr. Massimo Faggioli, Franciscan Renewal Center, Phoenix'},
+  {t:'prose',l:'The Jubilee of Hope as Francis\'s Final Legacy',
+   tx:'<p>Faggioli concludes his lecture with a reflection on what this jubilee, taken as a whole, means as the final public act of Pope Francis\'s pontificate. Francis died in April 2025, in the middle of a jubilee he had called and to which he had given the word "hope." This is, Faggioli suggests, his last legacy — "and it says a lot about his pontificate, his ministry, and how many possibilities there are in the Church and for the Church to say something to our world at this time."</p><p>The Jubilee of Hope is not a triumphalist claim. It is not the assertion that everything will be fine. It is the claim — grounded in the Paschal Mystery — that defeat is not the final word on human existence. That time does not belong to entropy. That the God who raised Jesus from the dead has not finished with humanity. That hoping is not an embarrassment but a vocation: the vocation of the Church to be, in Gaudium et Spes\'s phrase, a sign and instrument of the unity of the whole human family, in joy and in hope.</p>'},
+  {t:'gq',tx:'"Hope is not something that we can choose not to have. We hope because others have already hoped. It is not something we can give ourselves. There is a work of education to hope that needs to happen — replacing a culture of despair, a culture of revenge, a culture of payback. Hope has ecclesial, religious, human, and political dimensions. And I believe this is really the last legacy that Pope Francis gave us."',ci:'— Dr. Massimo Faggioli, Franciscan Renewal Center, Phoenix (at the funeral of Pope Francis)'},
+ ]
+},
+];
 
-      // Button controls
-      prevBtn.addEventListener('click', prev);
-      nextBtn.addEventListener('click', next);
-      notesBtn.addEventListener('click', toggleNotes);
-      fsBtn.addEventListener('click', ()=>{
-        const el = document.documentElement;
-        if (!document.fullscreenElement && el.requestFullscreen) el.requestFullscreen();
-        else if (document.exitFullscreen) document.exitFullscreen();
-      });
-      printBtn.addEventListener('click', ()=>window.print());
-
-      // Keyboard controls
-      window.addEventListener('keydown', (e)=>{
-        const k = e.key;
-        if(['ArrowRight','PageDown',' '].includes(k)){ e.preventDefault(); next(); }
-        if(['ArrowLeft','PageUp','Backspace'].includes(k)){ e.preventDefault(); prev(); }
-        if(k==='n' || k==='N'){ e.preventDefault(); toggleNotes(); }
-        if(k==='f' || k==='F'){ e.preventDefault(); fsBtn.click(); }
-      });
-
-      // Hash navigation (#1..#25)
-      window.addEventListener('hashchange', ()=>{
-        const n = parseInt(location.hash.replace('#',''),10);
-        if(!Number.isNaN(n)) show(n-1);
-      });
-
-      // Initialize from hash
-      const start = parseInt(location.hash.replace('#',''),10);
-      if(!Number.isNaN(start)) idx = clamp(start-1,0,slides.length-1);
-      show(idx);
-
-      // Accessibility: focus deck to ensure arrow keys work in some embedders
-      deck.focus();
-    })();
-  </script></body>
+function go(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  const m={hero:'screen-hero',ov:'scr-ov',det:'scr-det'};
+  const el=document.getElementById(m[id]);
+  if(el){el.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
+  if(id==='ov') buildGrid();
+  document.querySelectorAll('#nbts .btn').forEach(b=>b.classList.remove('bact'));
+  if(id==='ov') document.querySelector('#nbts .btn').classList.add('bact');
+}
+function buildGrid(){
+  const g=document.getElementById('mgrid');
+  if(g.dataset.d) return; g.dataset.d='1';
+  M.forEach(m=>{
+    const d=document.createElement('div');
+    d.className='mcard reveal';
+    d.onclick=()=>showDet(m.id);
+    const tags=m.tags.map(t=>`<span style="font-family:var(--fu);font-size:.65rem;font-weight:700;padding:.18rem .55rem;border-radius:20px;background:${m.pl};color:${m.c}">${t}</span>`).join('');
+    d.innerHTML=`
+      <div class="mc-hd" data-n="${m.num}" style="background:linear-gradient(135deg,${m.c},${m.dk})">
+        <div class="mc-tag">${m.num}</div>
+        <div class="mc-icon">${m.icon}</div>
+        <div class="mc-nm">${m.nm}</div>
+        <div class="mc-sb">${m.sb}</div>
+      </div>
+      <div class="mc-bd">
+        <div style="display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.7rem">${tags}</div>
+        <p class="mc-prev">${m.prev}</p>
+      </div>
+      <div class="mc-ft" style="background:${m.c}"><span>Module ${m.num}</span><span>Open →</span></div>`;
+    g.appendChild(d);
+  });
+  setTimeout(()=>{
+    const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');obs.unobserve(x.target);}});},{threshold:.08});
+    document.querySelectorAll('#mgrid .reveal').forEach(el=>obs.observe(el));
+  },100);
+}
+function showDet(id){
+  const m=M.find(x=>x.id===id);
+  if(!m) return;
+  let body='';
+  m.ct.forEach(b=>{
+    if(b.t==='prose'){
+      body+=`<div class="dsec"><div class="dlbl">${b.l}</div><div class="prose">${b.tx}</div></div>`;
+    } else if(b.t==='gq'){
+      body+=`<blockquote class="gq">${b.tx}<cite>${b.ci}</cite></blockquote>`;
+    } else if(b.t==='tl'){
+      let tl=`<div class="dsec"><div class="dlbl">${b.l}</div><div class="tl">`;
+      b.items.forEach(i=>{tl+=`<div class="tl-item"><div class="tl-dot"></div><div class="tl-date">${i.d}</div><div class="tl-text">${i.tx}</div></div>`;});
+      tl+='</div></div>';
+      body+=tl;
+    } else if(b.t==='cards'){
+      let c=`<div class="dsec"><div class="dlbl">${b.l}</div><div class="cards">`;
+      b.items.forEach(i=>{c+=`<div class="card reveal"><div class="card-icon">${i.icon}</div><div class="card-title">${i.ti}</div><div class="card-body">${i.b}</div></div>`;});
+      c+='</div></div>';
+      body+=c;
+    } else if(b.t==='compare'){
+      const fo=b.fa, ag=b.ag;
+      body+=`<div class="dsec"><div class="dlbl">${b.l}</div><div class="compare">
+        <div class="cbox" style="background:${fo.bg}"><div class="clbl" style="color:${fo.lc}">${fo.l}</div><ul class="clist">${fo.items.map(i=>`<li style="--bl:${fo.lc}">${i}</li>`).join('')}</ul></div>
+        <div class="cbox" style="background:${ag.bg}"><div class="clbl" style="color:${ag.lc}">${ag.l}</div><ul class="clist">${ag.items.map(i=>`<li style="--bl:${ag.lc}">${i}</li>`).join('')}</ul></div>
+      </div></div>`;
+    } else if(b.t==='illus'){
+      body+=`<div class="illus"><div class="illus-icon">${b.icon}</div><div><div class="illus-label">${b.l}</div><div class="illus-text">${b.tx}</div></div></div>`;
+    }
+  });
+  const idx=M.indexOf(m);
+  const nxt=idx<M.length-1?M[idx+1]:null;
+  const prv=idx>0?M[idx-1]:null;
+  const tags=m.tags.map(t=>`<span class="badge">${t}</span>`).join('');
+  document.getElementById('dcont').innerHTML=`
+    <div class="dh" data-n="${m.num}" style="background:linear-gradient(135deg,${m.c},${m.dk})">
+      <div class="dht">
+        <div>
+          <div class="d-num">${m.num}</div>
+          <h1 class="d-nm">${m.nm}</h1>
+          <p class="d-sb">${m.sb}</p>
+          <div class="dbadges">${tags}</div>
+        </div>
+        <div class="d-icon">${m.icon}</div>
+      </div>
+    </div>
+    <div class="db" style="--cc:${m.c};--ccp:${m.pl}">
+      <div class="dsec"><div class="dlbl">Module Overview</div><div class="sum-box"><p>${m.sum}</p></div></div>
+      ${body}
+      <div class="det-nav">
+        <button class="btn bo" style="border-color:${m.c};color:${m.c}" onclick="go('ov')">← All Modules</button>
+        ${prv?`<button class="btn" style="background:${prv.c};color:#fff;padding:.35rem .85rem;border-radius:5px;cursor:pointer;font-family:var(--fu);font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:none" onclick="showDet('${prv.id}')">← ${prv.nm}</button>`:''}
+        ${nxt?`<button class="btn" style="background:${nxt.c};color:#fff;padding:.35rem .85rem;border-radius:5px;cursor:pointer;font-family:var(--fu);font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:none" onclick="showDet('${nxt.id}')">${nxt.nm} →</button>`:''}
+      </div>
+    </div>`;
+  go('det');
+  setTimeout(()=>{
+    const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');obs.unobserve(x.target);}});},{threshold:.06});
+    document.querySelectorAll('#dcont .reveal').forEach(el=>obs.observe(el));
+  },120);
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');obs.unobserve(x.target);}});},{threshold:.08});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+});
+</script>
+</body>
 </html>
