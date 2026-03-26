@@ -111,7 +111,7 @@ body{font-family:var(--fb);font-size:var(--fs);background:var(--cream);color:var
 .clbl{font-family:var(--fu);font-size:.64rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.6rem}
 .clist{list-style:none}
 .clist li{font-size:.88rem;color:var(--ink2);padding-left:.9rem;position:relative;margin-bottom:.42rem;line-height:1.55}
-.clist li::before{content:'›';position:absolute;left:0;font-weight:700}
+.clist li::before{content:'›';position:absolute;left:0;font-weight:700;color:var(--bul,var(--ink3))}
 .illus{background:linear-gradient(135deg,rgba(201,168,76,.08),rgba(201,168,76,.04));border:1.5px dashed rgba(201,168,76,.4);border-radius:12px;padding:1.4rem 1.7rem;margin:1.2rem 0;display:flex;align-items:flex-start;gap:1rem}
 .illus-icon{font-size:2.3rem;flex-shrink:0}
 .illus-label{font-family:var(--fu);font-size:.63rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem}
@@ -412,8 +412,8 @@ function showDet(id){
     } else if(b.t==='compare'){
       const fo=b.fa, ag=b.ag;
       body+=`<div class="dsec"><div class="dlbl">${b.l}</div><div class="compare">
-        <div class="cbox" style="background:${fo.bg}"><div class="clbl" style="color:${fo.lc}">${fo.l}</div><ul class="clist">${fo.items.map(i=>`<li style="--bl:${fo.lc}">${i}</li>`).join('')}</ul></div>
-        <div class="cbox" style="background:${ag.bg}"><div class="clbl" style="color:${ag.lc}">${ag.l}</div><ul class="clist">${ag.items.map(i=>`<li style="--bl:${ag.lc}">${i}</li>`).join('')}</ul></div>
+        <div class="cbox" style="background:${fo.bg}"><div class="clbl" style="color:${fo.lc}">${fo.l}</div><ul class="clist">${fo.items.map(i=>`<li style="--bul:${fo.lc}">${i}</li>`).join('')}</ul></div>
+        <div class="cbox" style="background:${ag.bg}"><div class="clbl" style="color:${ag.lc}">${ag.l}</div><ul class="clist">${ag.items.map(i=>`<li style="--bul:${ag.lc}">${i}</li>`).join('')}</ul></div>
       </div></div>`;
     } else if(b.t==='illus'){
       body+=`<div class="illus"><div class="illus-icon">${b.icon}</div><div><div class="illus-label">${b.l}</div><div class="illus-text">${b.tx}</div></div></div>`;
